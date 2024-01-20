@@ -914,12 +914,12 @@ a.btn_top.order {
 }
 
 a.btn_top.order:hover {
-    background-color: #262626;
+    background-color: #0F172B;
 }
 
 @media (max-width: 991px) {
     a.btn_top {
-        background-color: #262626;
+        background-color: #0F172B;
         color: #fff !important;
         border: 0;
         -webkit-border-radius: 0;
@@ -936,7 +936,7 @@ a.btn_top.order:hover {
 }
 
 .sticky a.btn_top.order:hover {
-    background-color: #262626;
+    background-color: #0F172B;
 }
 
 ul#top_menu {
@@ -1042,7 +1042,7 @@ ul#top_menu li a.search-overlay-menu-btn strong {
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     border-radius: 50%;
-    background-color: #262626;
+    background-color: #0F172B;
     color: #fff !important;
 }
 
@@ -1802,7 +1802,7 @@ a.img_container .short_info p {
 }
 
 .call_section .box_1 {
-    background-color: #262626;
+    background-color: #0F172B;
     color: #fff;
     padding: 45px;
     border-radius: 5px;
@@ -1833,7 +1833,7 @@ a.img_container .short_info p {
 }
 
 .call_section_img {
-    background: #262626;
+    background: #0F172B;
     padding: 20px;
     height: 100%;
     border-radius: 5px;
@@ -4093,7 +4093,7 @@ footer .copy {
 
 #cookie-bar .cb-enable:hover {
     background: #fff;
-    color: #262626;
+    color: #0F172B;
 }
 
 #cookie-bar .cb-disable {
@@ -4110,7 +4110,7 @@ footer .copy {
 
 #cookie-bar .cb-policy:hover {
     background: #fff;
-    color: #262626;
+    color: #0F172B;
 }
 
 #cookie-bar.fixed {
@@ -4228,7 +4228,7 @@ footer .copy {
 }
 
 #staff .item .title h4 {
-    background-color: #262626;
+    background-color: #0F172B;
     display: inline-block;
     -webkit-border-radius: 3px 3px 0 0;
     -moz-border-radius: 3px 3px 0 0;
@@ -4546,7 +4546,7 @@ footer .copy {
     -moz-border-radius: 0 3px 3px 0;
     -ms-border-radius: 0 3px 3px 0;
     border-radius: 0 3px 3px 0;
-    background-color: #262626;
+    background-color: #0F172B;
     -moz-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
