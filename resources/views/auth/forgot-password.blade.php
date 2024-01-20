@@ -33,7 +33,7 @@
 
           <!-- Heading -->
           <h1 class="display-4 text-center mb-3">
-            Password reset
+            Forgot Password
           </h1>
 
           <!-- Subheading -->

@@ -54,7 +54,7 @@
               </label>
 
               <!-- Input -->
-              <input class="form-control @error('login') is-invalid @enderror" name="login" type="text" id="login" required="" placeholder="Enter your email">
+              <input class="form-control @error('login') is-invalid @enderror" name="login" type="text" id="login" required="" placeholder="Enter your email or username or phone">
               @error('login') <span class="text-danger"> {{ $message }} </span>@enderror
 
             </div>
