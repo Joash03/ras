@@ -13,6 +13,7 @@ use App\Models\Reserve;
 use App\Models\Service;
 use App\Models\Slider;
 use App\Models\Team;
+use App\Models\Testimonial;
 use App\Models\Customer;
 use App\Models\Order;
 use App\Models\Orderdetails;
@@ -157,8 +158,9 @@ class WebsiteController extends Controller
 
         $services = Service::where('status', 1)->limit(4)->get();
         $teams = Team::all();
+        $testimonials = Testimonial::all();
 
-        return view('frontend.about', compact('services', 'teams', 'carts'));
+        return view('frontend.about', compact('services', 'teams', 'testimonials', 'carts'));
     } // End Method
 
     public function contact()
@@ -561,7 +563,7 @@ class WebsiteController extends Controller
 
             $user = User::find($user);
             if ($user->role === 'employee'){
-                return redirect()->route('customer.order.index', ['order_status' => '0'] );
+                return redirect()->route('employee.order.index', ['order_status' => '0'] );
             }
             elseif($user->role === 'customer'){
                 return redirect()->route('customer.order.index', ['order_status' => '0'] );

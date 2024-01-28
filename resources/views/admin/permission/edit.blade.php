@@ -239,6 +239,14 @@
                               "customProperties": {
                                 "avatarSrc": ""
                               }
+                            },
+                            {
+                              "value": "testimonial",
+                              "selected": "{{ $permission->group_name == 'testimonial' ? 'selected' : '' }}",
+                              "label": "&emsp;Testimonial",
+                              "customProperties": {
+                                "avatarSrc": ""
+                              }
                             }
                           ]}'></select>
                         </div>

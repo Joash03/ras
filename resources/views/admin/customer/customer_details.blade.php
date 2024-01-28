@@ -9,7 +9,7 @@
         <!-- Header -->
         <div class="header">
             <!-- Image -->
-            <img src="{{ asset('backend/assets/img/covers/profile-cover-1.jpg') }}" class="header-img-top" alt="...">
+            <img src="{{ asset('backend/assets/img/covers/profile-cover-1.jpg') }}"  class="header-img-top" style="height: 250px; object-fit: cover" alt="...">
               <!-- Body -->
               <div class="header-body border-0 mt-n5 mt-md-n6">
                 <div class="container-fluid">
@@ -27,11 +27,9 @@
                       <h1 class="header-title">{{ $customerDetails->name }}</h1>
                     </div>
                     <div class="col-12 col-md-auto mt-2 mb-md-3">
-                        <!-- Button -->
-                        <a href="{{ route('customer.add') }}" class="btn btn-outline-primary ms-2">Add Customer</a>
 
                         <!-- Button -->
-                        <a href="{{ route('customer.edit', $customerDetails->id) }}" class="btn btn-outline-primary ms-2">Edit Customer</a>
+                        <a href="{{ route('customer.edit', $customerDetails->id) }}" class="btn btn-primary ms-2">Edit Details</a>
                     </div>
                   </div> <!-- / .row -->
                   <div class="row card mt-5">

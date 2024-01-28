@@ -26,7 +26,7 @@
             <div class="col-auto">
 
               <!-- Buttons -->
-              <a href="{{ route('pos.index') }}" class="btn btn-outline-primary ms-2">
+              <a href="{{ route('pos.index') }}" class="btn btn-primary ms-2">
                 Create New Order
               </a>
 
@@ -126,7 +126,7 @@
                                         $paymentStatusClass = 'bg-success-soft';
                                         $paymentStatusText = 'Success';
                                     } elseif ($item->payment_status === 2) {
-                                        $paymentStatusClass = 'bg-warning-soft';
+                                        $paymentStatusClass = 'bg-info-soft';
                                         $paymentStatusText = 'Pending';
                                     }
                                 @endphp
@@ -138,7 +138,7 @@
                                     $orderStatusClass = '';
                                     $orderStatusText = '';
                                     if ($item->order_status === 0) {
-                                        $orderStatusClass = 'bg-warning-soft';
+                                        $orderStatusClass = 'bg-info-soft';
                                         $orderStatusText = 'Pending';
                                     } elseif ($item->order_status === 1) {
                                         $orderStatusClass = 'bg-success-soft';
@@ -224,34 +224,6 @@
                                                         <li class="list-group-item d-flex align-items-center justify-content-between px-0">
                                                             <h4 class="fw-normal mb-1">Channel</h4><h4 class="fw-normal mb-1">{{ $item->channel }}</h4>
                                                         </li>
-                                                        {{-- <li class="list-group-item d-flex align-items-center justify-content-between px-0">
-                                                            <h4 class="fw-normal mb-1">Order Status</h4>
-                                                            <h4 class="fw-normal mb-1"><span class="item-score badge {{ $orderStatusClass }}">{{ $orderStatusText }}</span></h4>
-                                                        </li>
-                                                        <li class="list-group-item d-flex align-items-center justify-content-between px-0">
-                                                            <h4 class="fw-normal mb-1">Payment Status</h4> <h4 class="fw-normal mb-1"><span class="item-score badge {{ $paymentStatusClass }}">{{ $paymentStatusText }}</span></h4>
-                                                        </li>
-                                                        <li class="list-group-item d-flex align-items-center justify-content-between px-0">
-                                                            <h4 class="fw-normal mb-1">Order Items</h4>
-                                                            <h4 class="fw-normal mb-1">
-                                                                @php
-                                                                    $orderItemsFound = false;
-                                                                @endphp
-
-                                                                @foreach ($orderdetails as $orderitem)
-                                                                    @if ($item->reference === $orderitem->reference)
-                                                                        <span style="margin-right: 25px; margin-bottom: 10px;">{{ $orderitem->item_name }}</span> <span> X {{ $orderitem->quantity }}</span> <br>
-                                                                        @php
-                                                                            $orderItemsFound = true;
-                                                                        @endphp
-                                                                    @endif
-                                                                @endforeach
-
-                                                                @if (!$orderItemsFound)
-                                                                    No items found for this order.
-                                                                @endif
-                                                            </h4>
-                                                        </li> --}}
                                                         <li class="list-group-item d-flex align-items-center justify-content-between px-0">
                                                             <h4 class="fw-normal mb-1">Total Price</h4>
                                                             <h4 class="fw-normal mb-1">#{{ $item->total }}</h4>
@@ -268,7 +240,7 @@
                                         </div>
                                         <div class="col-auto">
                                             <!-- Buttons -->
-                                            <a href="{{ route('pos.invoice', $item->id) }}" class="btn btn-outline-primary ms-2">
+                                            <a href="{{ route('pos.invoice', $item->id) }}" class="btn btn-primary ms-2">
                                                 View Invoice
                                             </a>
                                         </div>

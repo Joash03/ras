@@ -135,7 +135,7 @@ article.blog .post_info h2 a {
 }
 
 article.blog .post_info h2 a:hover {
-    color: #FEA116
+    color: #CE7F38
 }
 
 article.blog .post_info ul {
@@ -248,7 +248,7 @@ article.blog .post_info ul li:last-child i {
 }
 
 .comments-list h3 a:hover {
-    color: #FEA116
+    color: #CE7F38
 }
 
 .comments-list li {
@@ -276,7 +276,7 @@ article.blog .post_info ul li:last-child i {
     font-weight: 500;
     line-height: 1;
     font-size: 1rem;
-    background: #FEA116;
+    background: #CE7F38;
     padding: 8px 10px 10px 10px;
     color: #fff;
     border-radius: 3px;
@@ -311,7 +311,7 @@ article.blog .post_info ul li:last-child i {
 }
 
 .widget ul.cats a:hover {
-    color: #FEA116
+    color: #CE7F38
 }
 
 .widget ul.cats a span {
@@ -319,7 +319,7 @@ article.blog .post_info ul li:last-child i {
     right: 0;
     width: 25px;
     height: 25px;
-    background: #FEA116;
+    background: #CE7F38;
     color: #fff;
     text-align: center;
     line-height: 25px;
@@ -347,7 +347,7 @@ article.blog .post_info ul li:last-child i {
 }
 
 .tags a:hover {
-    background-color: #FEA116;
+    background-color: #CE7F38;
     color: #fff
 }
 
@@ -357,7 +357,7 @@ article.blog .post_info ul li:last-child i {
 
 .search_blog .form-group button[type="submit"] {
     outline: none;
-    color: #0F172B;
+    color: #030302;
     font-size: 21px;
     font-size: 1.3125rem;
     background: none;
@@ -368,7 +368,7 @@ article.blog .post_info ul li:last-child i {
 }
 
 .search_blog .form-group button[type="submit"]:hover {
-    color: #FEA116
+    color: #CE7F38
 }
 
 .singlepost {
@@ -430,7 +430,7 @@ article.blog .post_info ul li:last-child i {
 }
 
 .postmeta ul li a:hover {
-    color: #FEA116
+    color: #CE7F38
 }
 
 .postmeta ul li a i {
@@ -439,7 +439,7 @@ article.blog .post_info ul li:last-child i {
 
 /* .dropcaps p:first-child::first-letter {
     color: #fff;
-    background-color: #FEA116;
+    background-color: #CE7F38;
     float: left;
     font-size: 64px;
     line-height: 1;

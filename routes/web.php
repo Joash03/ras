@@ -306,6 +306,16 @@ Route::middleware(['auth', 'rolegen:admin'])->group(function () {
 
 
 
+    //Testimonial
+    Route::get('/all/testimonial', [AdminController::class, 'AllTestimonial'])->name('testimonial.index')->middleware('permission:testimonial.index');
+    Route::get('/add/testimonial', [AdminController::class, 'AddTestimonial'])->name('testimonial.create')->middleware('permission:testimonial.create');
+    Route::post('/store/testimonial', [AdminController::class, 'StoreTestimonial'])->name('testimonial.store');
+    Route::get('/edit/testimonial/{id}', [AdminController::class, 'EditTestimonial'])->name('testimonial.edit')->middleware('permission:testimonial.edit');
+    Route::post('/update/testimonial/{id}',[AdminController::class, 'UpdateTestimonial'])->name('testimonial.update');
+    Route::delete('/delete/testimonial/{id}', [AdminController::class, 'DeleteTestimonial'])->name('testimonial.destroy')->middleware('permission:testimonial.destroy');
+
+
+
     //Settings
     Route::get('/add/general', [AdminController::class, 'AddGeneral'])->name('general.create')->middleware('permission:general.create');
     Route::post('/store/general/{type}', [AdminController::class, 'StoreGeneral'])->name('general.store');

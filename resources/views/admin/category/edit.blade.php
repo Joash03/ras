@@ -56,22 +56,22 @@
                       <div class="btn-group-toggle">
                         <input type="radio" class="btn-check" name="type" id="menuc" value="0" {{ $category->type == 0 ? 'checked':'' }}>
                         <label class="btn btn-white" for="menuc">
-                          <i class="fe fe-check-circle"></i> Menu Category
+                          <i class="fe fe-check-circle"></i> Menu
                         </label>
 
                         <input type="radio" class="btn-check" name="type" id="productc" value="1" {{ $category->type == 1 ? 'checked':'' }}>
                         <label class="btn btn-white" for="productc">
-                          <i class="fe fe-check-circle"></i> Product Category
+                          <i class="fe fe-check-circle"></i> Product
                         </label>
 
                         <input type="radio" class="btn-check" name="type" id="blogc" value="2" {{ $category->type == 2 ? 'checked':'' }}>
                         <label class="btn btn-white" for="blogc">
-                          <i class="fe fe-check-circle"></i> Blog Category
+                          <i class="fe fe-check-circle"></i> Blog
                         </label>
 
                         <input type="radio" class="btn-check" name="type" id="storec" value="3" {{ $category->type == 3 ? 'checked':'' }}>
                         <label class="btn btn-white" for="storec">
-                          <i class="fe fe-check-circle"></i> Store Category
+                          <i class="fe fe-check-circle"></i> Store
                         </label>
                       </div>
                     </div>

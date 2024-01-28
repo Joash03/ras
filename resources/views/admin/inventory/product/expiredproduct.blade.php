@@ -60,7 +60,7 @@
                     </div>
                     <div class="col-auto">
                         <!-- Buttons -->
-                        <a class="btn btn-outline-dark ms-2" href="{{ route('inventory.product.expiredproduct.edit') }}">Edit Product Date</a>
+                        <a class="btn btn-dark ms-2" href="{{ route('inventory.product.expiredproduct.edit') }}">Edit Product Date</a>
                     </div>
                 </div> <!-- / .row -->
                 </div>
@@ -185,8 +185,8 @@
                     </div>
                     <div class="col-auto">
                         <!-- Buttons -->
-                        <a class="btn btn-outline-dark ms-2" onclick="resetPage()">Reset Input</a>
-                        <button class="btn btn-outline-primary ms-2" type="submit">Update Product Date</button>
+                        <a class="btn btn-dark ms-2" onclick="resetPage()">Reset Input</a>
+                        <button class="btn btn-primary ms-2" type="submit">Update Product Date</button>
                     </div>
                 </div> <!-- / .row -->
                 </div>

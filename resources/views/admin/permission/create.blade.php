@@ -125,13 +125,6 @@
                           }
                         },
                         {
-                          "value": "permissions",
-                          "label": "&emsp;Permissions",
-                          "customProperties": {
-                            "avatarSrc": ""
-                          }
-                        },
-                        {
                           "value": "pos",
                           "label": "&emsp;POS",
                           "customProperties": {
@@ -204,6 +197,13 @@
                         {
                           "value": "team",
                           "label": "&emsp;Team",
+                          "customProperties": {
+                            "avatarSrc": ""
+                          }
+                        },
+                        {
+                          "value": "testimonial",
+                          "label": "&emsp;Testimonial",
                           "customProperties": {
                             "avatarSrc": ""
                           }

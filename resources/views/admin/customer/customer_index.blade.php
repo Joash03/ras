@@ -19,7 +19,7 @@
             </div>
             <div class="col-auto">
               <!-- Buttons -->
-              <a href="{{ route('customer.add') }}" class="btn btn-outline-primary ms-2">Add Customer</a>
+              <a href="{{ route('customer.add') }}" class="btn btn-primary ms-2">Create Customer</a>
             </div>
           </div> <!-- / .row -->
         </div>

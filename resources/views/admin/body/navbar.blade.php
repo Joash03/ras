@@ -14,7 +14,7 @@
     </button>
 
     <!-- Brand -->
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="{{ route('home') }}">
       <img src="{{ (!empty($general ? $general->logo_sticky : '')) ? asset('uploads/general_images/'.$general->logo_sticky) : asset('frontend/img/logo_2.png') }}" class="navbar-brand-img mx-auto" alt="...">
     </a>
 
@@ -470,14 +470,14 @@
                         <ul class="nav nav-sm flex-column">
                             @if(Auth::user()->can('employee.all.current'))
                             <li class="nav-item">
-                                <a href="{{ route('employee.all', ['status' => 'current']) }}" class="nav-link {{ request()->routeIs('employee.all') ? 'active' : '' }}">
+                                <a href="{{ route('employee.all', ['status' => 'active']) }}" class="nav-link {{ request()->routeIs('employee.all') ? 'active' : '' }}">
                                     Current Employees
                                 </a>
                             </li>
                             @endif
                             @if(Auth::user()->can('employee.all.former'))
                             <li class="nav-item">
-                                <a href="{{ route('employee.all', ['status' => 'former']) }}" class="nav-link {{ request()->routeIs('employee.all') ? 'active' : '' }}">
+                                <a href="{{ route('employee.all', ['status' => 'inactive']) }}" class="nav-link {{ request()->routeIs('employee.all') ? 'active' : '' }}">
                                     Former Employees
                                 </a>
                             </li>
@@ -555,14 +555,14 @@
                         <ul class="nav nav-sm flex-column">
                             @if(Auth::user()->can('customer.all.current'))
                             <li class="nav-item">
-                                <a href="{{ route('customer.all', ['status' => 'current']) }}" class="nav-link {{ request()->routeIs('customer.all') ? 'active' : '' }}">
+                                <a href="{{ route('customer.all', ['status' => 'active']) }}" class="nav-link {{ request()->routeIs('customer.all') ? 'active' : '' }}">
                                     Current Customers
                                 </a>
                             </li>
                             @endif
                             @if(Auth::user()->can('customer.all.former'))
                             <li class="nav-item">
-                                <a href="{{ route('customer.all', ['status' => 'former']) }}" class="nav-link {{ request()->routeIs('customer.all') ? 'active' : '' }}">
+                                <a href="{{ route('customer.all', ['status' => 'inactive']) }}" class="nav-link {{ request()->routeIs('customer.all') ? 'active' : '' }}">
                                     Former Customers
                                 </a>
                             </li>
@@ -744,6 +744,32 @@
                                 @if(Auth::user()->can('team.create'))
                                 <a class="nav-link {{ request()->routeIs('team.create') ? 'active' : '' }}" href="{{ route('team.create') }}">
                                     Create Team
+                                </a>
+                            </li>
+                            @endif
+                        </ul>
+                    </div>
+                </li>
+                @endif
+
+                @if(Auth::user()->can('testimonial.menu'))
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs(['testimonial.index', 'testimonial.create', 'testimonial.edit']) ? 'active' : '' }}" href="#sidebarTestimonial" data-bs-toggle="collapse" role="button" aria-expanded="{{ request()->routeIs(['testimonial.index', 'testimonial.create', 'testimonial.edit']) ? 'true' : 'false' }}" aria-controls="sidebarTestimonial">
+                        <i class="fe fe-clipboard"></i>Testimonial
+                    </a>
+                    <div class="collapse {{ request()->routeIs(['testimonial.index', 'testimonial.create', 'testimonial.edit']) ? 'show' : '' }}" id="sidebarTestimonial">
+                        <ul class="nav nav-sm flex-column">
+                            @if(Auth::user()->can('testimonial.index'))
+                            <li class="nav-item">
+                                <a class="nav-link {{ request()->routeIs('testimonial.index') ? 'active' : '' }}" href="{{ route('testimonial.index') }}">
+                                    All Testimonial
+                                </a>
+                            </li>
+                            @endif
+                            <li class="nav-item">
+                                @if(Auth::user()->can('testimonial.create'))
+                                <a class="nav-link {{ request()->routeIs('testimonial.create') ? 'active' : '' }}" href="{{ route('testimonial.create') }}">
+                                    Create Testimonial
                                 </a>
                             </li>
                             @endif
@@ -1072,12 +1098,12 @@
                     <div class="collapse {{ request()->routeIs(['employee.all', 'employee.add', 'employee.edit']) ? 'show' : '' }}" id="sidebarEmployees">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="{{ route('employee.all', ['status' => 'current']) }}" class="nav-link {{ request()->routeIs('employee.all') ? 'active' : '' }}">
+                                <a href="{{ route('employee.all', ['status' => 'active']) }}" class="nav-link {{ request()->routeIs('employee.all') ? 'active' : '' }}">
                                     Current Employees
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('employee.all', ['status' => 'former']) }}" class="nav-link {{ request()->routeIs('employee.all') ? 'active' : '' }}">
+                                <a href="{{ route('employee.all', ['status' => 'inactive']) }}" class="nav-link {{ request()->routeIs('employee.all') ? 'active' : '' }}">
                                     Former Employees
                                 </a>
                             </li>
@@ -1115,12 +1141,12 @@
                     <div class="collapse {{ request()->routeIs(['customer.all', 'customer.add', 'customer.edit']) ? 'show' : '' }}" id="sidebarCustomers">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="{{ route('customer.all', ['status' => 'current']) }}" class="nav-link {{ request()->routeIs('customer.all') ? 'active' : '' }}">
+                                <a href="{{ route('customer.all', ['status' => 'active']) }}" class="nav-link {{ request()->routeIs('customer.all') ? 'active' : '' }}">
                                     Current Customers
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('customer.all', ['status' => 'former']) }}" class="nav-link {{ request()->routeIs('customer.all') ? 'active' : '' }}">
+                                <a href="{{ route('customer.all', ['status' => 'inactive']) }}" class="nav-link {{ request()->routeIs('customer.all') ? 'active' : '' }}">
                                     Former Customers
                                 </a>
                             </li>
@@ -1349,6 +1375,25 @@
                             <li class="nav-item">
                                 <a class="nav-link {{ request()->routeIs('team.create') ? 'active' : '' }}" href="{{ route('team.create') }}">
                                 Create Team
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs(['testimonial.index', 'testimonial.create', 'testimonial.edit']) ? 'active' : '' }}" href="#sidebarTestimonial" data-bs-toggle="collapse" role="button" aria-expanded="{{ request()->routeIs(['testimonial.index', 'testimonial.create', 'testimonial.edit']) ? 'true' : 'false' }}" aria-controls="sidebarTestimonial">
+                        <i class="fe fe-clipboard"></i>Testimonial
+                    </a>
+                    <div class="collapse {{ request()->routeIs(['testimonial.index', 'testimonial.create', 'testimonial.edit']) ? 'show' : '' }}" id="sidebarTestimonial">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link {{ request()->routeIs('testimonial.index') ? 'active' : '' }}" href="{{ route('testimonial.index') }}">
+                                    All Testimonial
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{ request()->routeIs('testimonial.create') ? 'active' : '' }}" href="{{ route('testimonial.create') }}">
+                                Create Testimonial
                                 </a>
                             </li>
                         </ul>

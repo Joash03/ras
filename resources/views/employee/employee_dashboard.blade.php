@@ -352,7 +352,7 @@
                         <!-- Dropdown -->
                         <div class="dropdown">
                           <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fe fe-more-vertical"></i>
+                            <i class="fe fe-eye"></i>
                           </a>
                           <div class="dropdown-menu dropdown-menu-end">
                             <a href="#!" class="dropdown-item">
@@ -398,7 +398,7 @@
                         <!-- Dropdown -->
                         <div class="dropdown">
                           <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fe fe-more-vertical"></i>
+                            <i class="fe fe-eye"></i>
                           </a>
                           <div class="dropdown-menu dropdown-menu-end">
                             <a href="#!" class="dropdown-item">
@@ -761,7 +761,7 @@
                           <!-- Dropdown -->
                           <div class="dropdown">
                             <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              <i class="fe fe-more-vertical"></i>
+                              <i class="fe fe-eye"></i>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
                               <a href="#" class="dropdown-item" data-dz-remove>

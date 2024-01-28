@@ -27,7 +27,7 @@
     content: "\2a";
     font-family: 'ElegantIcons';
     position: absolute;
-    color: #0F172B;
+    color: #030302;
     right: 10px;
     top: 10px;
     font-size: 1.125rem
@@ -46,11 +46,11 @@
     -webkit-appearance: none;
     cursor: pointer;
     outline: none;
-    color: #0F172B
+    color: #030302
 }
 
 .sort_select select:focus {
-    color: #0F172B;
+    color: #030302;
     outline: none;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
@@ -79,7 +79,7 @@ a.btn_filters span {
 a.btn_filters i {
     font-size: 21px;
     font-size: 1.3125rem;
-    color: #0F172B
+    color: #030302
 }
 
 @media (max-width: 991px) {
@@ -203,7 +203,7 @@ a.open_filters.btn_filters {
     display: block;
     font-size: 14px;
     font-size: 0.875rem;
-    color: #0F172B;
+    color: #030302;
     padding: 8px 10px;
     margin: -5px -5px 0 -5px;
     line-height: 1;
@@ -374,7 +374,7 @@ a.open_filters.btn_filters {
     font-size: 14px;
     font-size: 0.875rem;
     margin: 3px 0 0 0;
-    color: #0F172B;
+    color: #030302;
     font-weight: 500;
     display: inline-block
 }
@@ -417,7 +417,7 @@ a.open_filters.btn_filters {
 }
 
 .new_price {
-    color: #FEA116;
+    color: #CE7F38;
     font-weight: 500;
     font-size: 1rem;
 }
@@ -479,7 +479,7 @@ a.open_filters.btn_filters {
 .row_item a h3 {
     font-size: 18px;
     font-size: 1.125rem;
-    color: #0F172B
+    color: #030302
 }
 
 @media (max-width: 575px) {
@@ -947,7 +947,7 @@ input.qty2:focus {
 
 .review_content em {
     font-weight: 500;
-    color: #FEA116;
+    color: #CE7F38;
     line-height: 22px;
     margin-left: 5px;
     float: right;

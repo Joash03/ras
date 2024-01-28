@@ -22,7 +22,7 @@
               </div>
               <div class="col-auto">
                 <!-- Buttons -->
-                <a href="{{ route('employee.attendance') }}" class="btn btn-outline-primary ms-2">Attendance List</a>
+                <a href="{{ route('employee.attendance') }}" class="btn btn-primary ms-2">Attendance List</a>
               </div>
             </div> <!-- / .row -->
           </div>

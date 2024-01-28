@@ -18,8 +18,8 @@
             </div>
             <div class="col-auto">
               <!-- Buttons -->
-              <a href="{{ route('gallery.create') }}" class="btn btn-outline-primary ms-2">
-                Add Gallery
+              <a href="{{ route('gallery.create') }}" class="btn btn-primary ms-2">
+                Create Gallery
               </a>
             </div>
           </div> <!-- / .row -->

@@ -25,7 +25,7 @@
             </div>
             <div class="col-auto">
               <!-- Buttons -->
-              <a href="{{ route("inventory.product.edit") }}" class="btn btn-outline-primary ms-2">Edit Product Inventory</a>
+              <a href="{{ route("inventory.product.edit") }}" class="btn btn-primary ms-2">Edit Product Inventory</a>
             </div>
           </div> <!-- / .row -->
         </div>

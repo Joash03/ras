@@ -31,7 +31,7 @@
               <a href="{{ route('product.export') }}" class="btn btn-outline-danger ms-2" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="Export Product">
                 <span class="fe fe-download"></span>
               </a>
-              <a href="{{ route('product.create') }}" class="btn btn-outline-primary ms-2">Add Product</a>
+              <a href="{{ route('product.create') }}" class="btn btn-primary ms-2">Create Product</a>
             </div>
           </div> <!-- / .row -->
         </div>
@@ -198,7 +198,7 @@
                                                     <h4 class="fw-normal mb-1">Category</h4> <h4 class="fw-normal mb-1">{{ $item->category->name }}</h4>
                                                     </li>
                                                     <li class="list-group-item d-flex align-items-center justify-content-between px-0">
-                                                    <h4 class="fw-normal mb-1">Product Status</h4> <h4 class="fw-normal mb-1"><span class="item-score badge {{ $item->status == 1 ? ' bg-info-soft':'bg-danger-soft' }}">{{ $item->status == 1 ? 'Published':'Draft' }}</span></h4>
+                                                    <h4 class="fw-normal mb-1">Product Status</h4> <h4 class="fw-normal mb-1"><span class="item-score badge {{ $item->status == 1 ? ' bg-success-soft':'bg-danger-soft' }}">{{ $item->status == 1 ? 'Published':'Draft' }}</span></h4>
                                                     </li>
                                                     <li class="list-group-item d-flex align-items-center justify-content-between px-0">
                                                     <h4 class="fw-normal mb-1">Stock Quantity</h4> <h4 class="fw-normal mb-1">{{ $item->stock }}</h4>

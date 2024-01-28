@@ -136,7 +136,7 @@
                             <div class="d-flex align-items-center ">
                                 <span style="margin-right: 5px">
                                     <!-- Button -->
-                                    <a class="btn btn-outline-primary btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Pay Salary" href="{{ route('salary.pay.details', $item->employee_id) }}">
+                                    <a class="btn btn-outline-success btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Pay Salary" href="{{ route('salary.pay.details', $item->employee_id) }}">
                                         <span class="fe fe-dollar-sign"></span>
                                     </a>
                                 </span>

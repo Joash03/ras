@@ -2160,7 +2160,7 @@
 .owl-theme .owl-dots .owl-dot.active span,
 .owl-theme .owl-dots .owl-dot:hover span {
     background: 0 0 !important;
-    border: 2px solid #FEA116;
+    border: 2px solid #CE7F38;
     -moz-transition: all .3s ease-in-out;
     -o-transition: all .3s ease-in-out;
     -webkit-transition: all .3s ease-in-out;
@@ -2183,7 +2183,7 @@
 
 .owl-theme .owl-dots .owl-dot span::before {
     content: '';
-    background-color: #FEA116 !important;
+    background-color: #CE7F38 !important;
     display: block;
     border-radius: 50%;
     width: 8px;
@@ -2739,7 +2739,7 @@
 }
 
 .nice-select .option.selected {
-    color: #0F172B;
+    color: #030302;
     font-weight: 500
 }
 

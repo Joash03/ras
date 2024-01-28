@@ -141,6 +141,7 @@
             <button type="submit"><i class="icon_search"></i></button>
         </form>
     </div><!-- End Search -->
+</header>
 
 <script>
 $(document).ready(function () {

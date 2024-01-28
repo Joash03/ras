@@ -18,8 +18,8 @@
             </div>
             <div class="col-auto">
               <!-- Buttons -->
-              <a href="{{ route('blog.create') }}" class="btn btn-outline-primary ms-2">
-                Add Blog
+              <a href="{{ route('blog.create') }}" class="btn btn-primary ms-2">
+                Creat Blog
               </a>
 
             </div>

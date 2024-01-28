@@ -122,7 +122,7 @@
                       </td>
                       <td>
                         <!-- Status Badge -->
-                        <span class="item-score badge {{ $item->status === 0 ? 'bg-warning-soft':($item->status === 1 ? 'bg-info-soft':'bg-danger-soft') }}">{{ $item->status === 0 ? 'Pending':($item->status === 1 ? 'Reserved':'Canceled') }}</span>
+                        <span class="item-score badge {{ $item->status === 0 ? 'bg-info-soft':($item->status === 1 ? 'bg-info-soft':'bg-danger-soft') }}">{{ $item->status === 0 ? 'Pending':($item->status === 1 ? 'Reserved':'Canceled') }}</span>
                       </td>
                       <td>
                           <div class="d-flex align-items-center ">

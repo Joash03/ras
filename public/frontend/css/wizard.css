@@ -136,7 +136,7 @@
 .ui-widget-header .ui-state-default {
     border: 1px dotted #ccc;
     font-weight: 600;
-    color: #0F172B;
+    color: #030302;
 }
 
 .ui-state-default a,
@@ -165,16 +165,16 @@
 
 .ui-state-highlight {
     background: #dfd;
-    color: #0F172B !important;
+    color: #030302 !important;
 }
 
 .ui-datepicker-today .ui-state-default {
     background: #eee;
-    color: #0F172B;
+    color: #030302;
 }
 
 .ui-datepicker-today .ui-state-default:hover {
-    background: #FEA116;
+    background: #CE7F38;
     color: #fff !important;
 }
 
@@ -231,7 +231,7 @@
 .custom_drop .dropdown a {
     padding: 15px 15px 12px 15px;
     line-height: 1;
-    color: #0F172B;
+    color: #030302;
     font-weight: 500;
     display: block;
     position: relative;
@@ -352,7 +352,7 @@
 
 .radio_select input[type="radio"]:checked+label {
     border: 1px solid transparent;
-    background-color: #FEA116;
+    background-color: #CE7F38;
     color: #fff;
 }
 
@@ -366,7 +366,7 @@ input#website {
 
 #wizard_container {
     width: 100%;
-    background-color: #FEA116;
+    background-color: #CE7F38;
     padding: 30px;
     margin-bottom: 60px;
     -webkit-border-radius: 5px;
@@ -457,7 +457,7 @@ button.submit {
     outline: none;
     text-align: center;
     background: #fff;
-    color: #FEA116;
+    color: #CE7F38;
     position: relative;
     font-size: 0.875rem;
     font-weight: 600;
@@ -480,7 +480,7 @@ button[disabled] {
 
 .backward:hover,
 .forward:hover {
-    background: #0F172B;
+    background: #030302;
     color: #fff;
 }
 

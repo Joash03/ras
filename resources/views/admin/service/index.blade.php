@@ -18,8 +18,8 @@
             </div>
             <div class="col-auto">
               <!-- Buttons -->
-              <a href="{{ route('service.create') }}" class="btn btn-outline-primary ms-2">
-                Add Service
+              <a href="{{ route('service.create') }}" class="btn btn-primary ms-2">
+                Create Service
               </a>
 
             </div>
@@ -102,7 +102,7 @@
                             </td>
                             <td>
                             <!-- Text -->
-                            <a class="item-name text-reset">{{ Str::limit(strip_tags($item->description), 200) }}</a>
+                            <a class="item-name text-reset" style="max-width: 270px; white-space: pre-line;">{{ $item->description }}</a>
                             </td>
                             <td>
                             <!-- Status Badge -->

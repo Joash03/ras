@@ -52,6 +52,7 @@
 
     <!-- Sweetalert included -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 </head>
@@ -134,6 +135,7 @@
 	<script src="{{ asset('frontend/js/slider.js') }}"></script>
 	<script src="{{ asset('frontend/js/common_func.js') }}"></script>
 	<script src="{{ asset('frontend/phpmailer/validate.js') }}"></script>
+
 
 	<!-- SPECIFIC SCRIPTS (wizard form) -->
 	<script src="{{ asset('frontend/js/wizard/wizard_scripts.min.js') }}"></script>

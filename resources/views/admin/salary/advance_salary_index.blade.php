@@ -19,7 +19,7 @@
             </div>
             <div class="col-auto">
               <!-- Buttons -->
-              <a href="{{ route('salary.advance.add') }}" class="btn btn-outline-primary ms-2">Add Salary</a>
+              <a href="{{ route('salary.advance.add') }}" class="btn btn-primary ms-2">Create Advance Salary</a>
             </div>
           </div> <!-- / .row -->
         </div>

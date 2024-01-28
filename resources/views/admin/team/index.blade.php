@@ -18,8 +18,8 @@
             </div>
             <div class="col-auto">
               <!-- Buttons -->
-              <a href="{{ route('team.create') }}" class="btn btn-outline-primary ms-2">
-                Add Team
+              <a href="{{ route('team.create') }}" class="btn btn-primary ms-2">
+                Create Team
               </a>
             </div>
           </div> <!-- / .row -->

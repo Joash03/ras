@@ -18,7 +18,7 @@
             </div>
             <div class="col-auto">
               <!-- Buttons -->
-              <a href="{{ route('database.create') }}" class="btn btn-outline-primary ms-2">
+              <a href="{{ route('database.create') }}" class="btn btn-primary ms-2">
                 Create Database Backup
               </a>
 

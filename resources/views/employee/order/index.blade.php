@@ -25,7 +25,7 @@
             <div class="col-auto">
 
               <!-- Buttons -->
-              <a href="{{ route('menu') }}" class="btn btn-outline-primary ms-2">
+              <a href="{{ route('menu') }}" class="btn btn-primary ms-2">
                 New Order
               </a>
 
@@ -125,7 +125,7 @@
                                         $paymentStatusClass = 'bg-success-soft';
                                         $paymentStatusText = 'Success';
                                     } elseif ($item->payment_status === 2) {
-                                        $paymentStatusClass = 'bg-warning-soft';
+                                        $paymentStatusClass = 'bg-info-soft';
                                         $paymentStatusText = 'Pending';
                                     }
                                 @endphp
@@ -137,7 +137,7 @@
                                     $orderStatusClass = '';
                                     $orderStatusText = '';
                                     if ($item->order_status === 0) {
-                                        $orderStatusClass = 'bg-warning-soft';
+                                        $orderStatusClass = 'bg-info-soft';
                                         $orderStatusText = 'Pending';
                                     } elseif ($item->order_status === 1) {
                                         $orderStatusClass = 'bg-success-soft';
@@ -255,7 +255,7 @@
                                             </div>
                                             <div class="col-auto">
                                             <!-- Buttons -->
-                                            <a href="{{ route('employee.invoice', $item->id) }}" class="btn btn-outline-primary ms-2">
+                                            <a href="{{ route('employee.invoice', $item->id) }}" class="btn btn-primary ms-2">
                                                 View Invoice
                                             </a>
                                             </div>

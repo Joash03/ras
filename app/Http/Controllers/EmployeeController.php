@@ -32,7 +32,11 @@ class EmployeeController extends Controller
 
         $employee = Employee::where('employee_id', $authid)->first();
         $advancesalary = AdvanceSalary::where('employee_id', $authid)->first();
-
+        if ($advancesalary == null) {
+            $advancesalary = 0;
+        } else {
+            $advancesalary = $advancesalary->advance_salary;
+        }
         return view('employee.index', compact('date', 'pendingorders', 'totalorders', 'totalpendingorders', 'employee', 'advancesalary'));
     }// End Method
     public function SessionDestory(Request $request): RedirectResponse
@@ -118,7 +122,7 @@ class EmployeeController extends Controller
             $page_title = 'Order List';
             $orderdetails = Orderdetails::with('order')->get();
 
-        return view('customer.order.index', compact('page_title', 'orders', 'orderdetails'));
+        return view('employee.order.index', compact('page_title', 'orders', 'orderdetails'));
     }// End Method
     public function EmployeeOrderHistory()
     {

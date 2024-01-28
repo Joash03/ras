@@ -25,13 +25,14 @@
             </div>
             <div class="col-auto">
               <!-- Buttons -->
-              <a href="{{ route('menu.import') }}" class="btn btn-outline-dark ms-2"data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="Import Menu">
+              <a href="{{ route('menu.import') }}" class="btn btn-outline-dark ms-2" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="Import Menu">
                 <span class="fe fe-upload"></span>
               </a>
               <a href="{{ route('menu.export') }}" class="btn btn-outline-danger ms-2" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="Export Menu">
                 <span class="fe fe-download"></span>
+                <a href="{{ route('menu.create') }}" class="btn btn-primary ms-2"> Create Menu
+                </a>
               </a>
-              <a href="{{ route('menu.create') }}" class="btn btn-outline-primary ms-2">Add Menu</a>
             </div>
           </div> <!-- / .row -->
         </div>
@@ -131,7 +132,7 @@
                             <td>
 
                             <!-- Status Badge -->
-                            <span class="item-score badge {{ $item->status == 1 ? ' bg-info-soft':'bg-danger-soft' }}">{{ $item->status == 1 ? 'Published':'Draft' }}</span>
+                            <span class="item-score badge {{ $item->status == 1 ? ' bg-success-soft':'bg-danger-soft' }}">{{ $item->status == 1 ? 'Published':'Draft' }}</span>
 
                             </td>
                             <td>
@@ -203,7 +204,7 @@
                                                         </li>
                                                         <li class="list-group-item d-flex align-items-center justify-content-between px-0">
                                                             <h4 class="fw-normal mb-1">Menu Status</h4>
-                                                            <h4 class="fw-normal mb-1"><span class="item-score badge {{ $item->status == 1 ? ' bg-info-soft' : 'bg-danger-soft' }}">{{ $item->status == 1 ? 'Published' : 'Draft' }}</span></h4>
+                                                            <h4 class="fw-normal mb-1"><span class="item-score badge {{ $item->status == 1 ? ' bg-success-soft' : 'bg-danger-soft' }}">{{ $item->status == 1 ? 'Published' : 'Draft' }}</span></h4>
                                                         </li>
                                                         <li class="list-group-item d-flex align-items-center justify-content-between px-0">
                                                             <h4 class="fw-normal mb-1">Description</h4> <h4 class="fw-normal mb-1" style="max-width: 270px; white-space: pre-line;">{{ $item->description }}</h4>

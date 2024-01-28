@@ -29,11 +29,11 @@ $general = \App\Models\General::latest('created_at')->first();
               </div>
               <div class="col-auto">
                 <!-- Buttons -->
-                <button id="printButton" class="btn btn-outline-primary ms-2">
-                    <span class="fe fe-printer"></span> Print
+                <button id="printButton" class="btn btn-outline-dark ms-2"data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="Print Invoice">
+                    <span class="fe fe-printer"></span>
                 </button>
-                <button id="downloadButton" class="btn btn-outline-dark ms-2">
-                    <span class="fe fe-download"></span> Download
+                <button id="downloadButton" class="btn btn-outline-danger ms-2" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="Download Invoice">
+                    <span class="fe fe-download"></span>
                 </button>
               </div>
             </div> <!-- / .row -->
@@ -53,7 +53,7 @@ $general = \App\Models\General::latest('created_at')->first();
                              {{$general ? $general->company_name:'RAS'}} Invoice
                         </h2>
                         <!-- Text -->
-                        <p class="text-muted mb-4">
+                        <p class="text mb-4">
                             Invoice ID <span>{{ $order->reference }}</span>
                         </p>
                         </div>
@@ -61,51 +61,51 @@ $general = \App\Models\General::latest('created_at')->first();
                     <div class="row mb-4">
                         <div class="col-12 col-md-6">
                             <!-- Heading -->
-                            <h6 class="text-uppercase text-muted">
+                            <h6 class="text-uppercase text">
                                 Invoiced to
                             </h6>
                             <!-- Text -->
-                            <p class="text-muted mb-2">
-                                Customer Name: <strong class="text-body">{{ $customer->name }}</strong> <br>
+                            <p class="text mb-2">
+                                Customer Name: <strong class="text-body">{{ $employee->name }}</strong> <br>
                             </p>
-                            <p class="text-muted mb-2">
-                                Phone Number : <strong class="text-body">{{ $customer->email }}</strong><br>
+                            <p class="text mb-2">
+                                Phone Number : <strong class="text-body">{{ $employee->email }}</strong><br>
                             </p>
-                            <p class="text-muted mb-2">
+                            <p class="text mb-2">
                                 Payment Date: <strong class="text-body">{{ $order->transaction_date }}</strong><br>
                             </p>
                             <!-- Payment Status Badge -->
                             @php
                                 $paymentStatusClass = '';
                                 $paymentStatusText = '';
-                                if ($order->payment_status === 0) {
-                                    $paymentStatusClass = 'bg-warning-soft';
+                                if ($order->payment_status === 2) {
+                                    $paymentStatusClass = 'bg-info-soft';
                                     $paymentStatusText = 'Pending';
                                 } elseif ($order->payment_status === 1) {
                                     $paymentStatusClass = 'bg-success-soft';
                                     $paymentStatusText = 'Success';
-                                } elseif ($order->payment_status === 2) {
+                                } elseif ($order->payment_status === 0) {
                                     $paymentStatusClass = 'bg-danger-soft';
                                     $paymentStatusText = 'Failed';
                                 }
                             @endphp
-                            <p class="text-muted mb-2">
+                            <p class="text mb-2">
                                 Payment Status : <span class="item-score badge {{ $paymentStatusClass }}">{{ $paymentStatusText }}</span><br>
                             </p>
                         </div>
                         <div class="col-12 col-md-6 text-md-end">
                             <!-- Heading -->
-                            <h6 class="text-uppercase text-muted">
+                            <h6 class="text-uppercase text">
                                 Invoiced from
                             </h6>
                             <!-- Text -->
-                            <p class="text-muted mb-2">
+                            <p class="text mb-2">
                                 Company Name: <strong class="text-body">{{ $general ? $general->company_name:'RAS' }} </strong> <br>
                             </p>
-                            <p class="text-muted mb-2">
+                            <p class="text mb-2">
                                 Address: <strong class="text-body">{{ $general ? $general->address:'RAS Address' }} </strong><br>
                             </p>
-                            <p class="text-muted mb-2">
+                            <p class="text mb-2">
                                 Phone Number : <strong class="text-body">{{ $general ? $general->primary_phone:'080 RAS0 0000' }} </strong>
                             </p>
                         </div>
@@ -118,11 +118,11 @@ $general = \App\Models\General::latest('created_at')->first();
                                 <table class="table my-3">
                                 <thead>
                                     <tr>
-                                        <th class="text-muted">S/N</th>
-                                        <th class="text-muted">Name</th>
-                                        <th class="text-muted text-end">Qty</th>
-                                        <th class="text-muted text-end">Unit Cost</th>
-                                        <th class="text-muted text-end">Total</th>
+                                        <th class="text text-dark text-bold">S/N</th>
+                                        <th class="text text-dark text-bold">Name</th>
+                                        <th class="text text-dark text-bold text-end">Qty</th>
+                                        <th class="text text-dark text-bold text-end">Unit Cost</th>
+                                        <th class="text text-dark text-bold text-end">Total</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -173,14 +173,13 @@ $general = \App\Models\General::latest('created_at')->first();
 
                             <!-- Title -->
                             <h4 class="text-uppercase">
-                                Notes
+                                <strong>Notes</strong>
                             </h4>
 
                             <!-- Text -->
-                            <p class="text-muted mb-">
-                                We really appreciate your business and if there’s anything else we can do, please let us know! Also, should you need us to add VAT or anything else to this order, it’s super easy since this is a template, so just ask!
+                            <p class="text mb-">
+                                We really appreciate you doing business with us and if there’s anything else we can do, please let us know!
                             </p>
-
                         </div>
                     </div> <!-- / .row -->
                     </div>

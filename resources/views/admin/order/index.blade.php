@@ -26,7 +26,7 @@
             <div class="col-auto">
 
               <!-- Buttons -->
-              <a href="{{ route('pos.index') }}" class="btn btn-outline-primary ms-2">
+              <a href="{{ route('pos.index') }}" class="btn btn-primary ms-2">
                 Create New Order
               </a>
 
@@ -126,7 +126,7 @@
                                     $paymentStatusClass = 'bg-success-soft';
                                     $paymentStatusText = 'Success';
                                 } elseif ($item->payment_status === 2) {
-                                    $paymentStatusClass = 'bg-warning-soft';
+                                    $paymentStatusClass = 'bg-info-soft';
                                     $paymentStatusText = 'Pending';
                                 }
                             @endphp
@@ -138,7 +138,7 @@
                                 $orderStatusClass = '';
                                 $orderStatusText = '';
                                 if ($item->order_status === 0) {
-                                    $orderStatusClass = 'bg-warning-soft';
+                                    $orderStatusClass = 'bg-info-soft';
                                     $orderStatusText = 'Pending';
                                 } elseif ($item->order_status === 1) {
                                     $orderStatusClass = 'bg-success-soft';
@@ -275,13 +275,13 @@
                             @endphp
                             <span class="{{ $paymentStatusFailedClass }} {{ $paymentStatusSuccessClass }}" style="margin-right: 5px">
                                 <!-- Button -->
-                                <a class="btn btn-outline-primary btn-sm payment-button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Confirm Payment" href="{{ route('confirm.payment', $item->id) }}">
+                                <a class="btn btn-outline-success btn-sm payment-button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Confirm Payment" href="{{ route('confirm.payment', $item->id) }}">
                                     <span class="fe fe-dollar-sign"></span>
                                 </a>
                             </span>
                             <span class="{{ $paymentStatusFailedClass }} {{ $paymentStatusPendingClass }}" style="margin-right: 5px">
                                 <!-- Button -->
-                                <a class="btn btn-outline-primary btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Complete Order" href="{{ route('order.confirmation',['complete', $item->id]) }}">
+                                <a class="btn btn-outline-success btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Complete Order" href="{{ route('order.confirmation',['complete', $item->id]) }}">
                                     <span class="fe fe-check"></span>
                                 </a>
                             </span>
@@ -296,7 +296,7 @@
                             @csrf
                             @method('DELETE')
                                 <!-- Button to trigger deletion -->
-                                <button type="submit" class="{{ $paymentStatusSuccessClass }} {{ $paymentStatusSuccessClass }} btn btn-outline-danger btn-sm delete-button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Delete">
+                                <button type="submit" class="{{ $paymentStatusSuccessClass }} {{ $paymentStatusSuccessClass }} btn btn-danger btn-sm delete-button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Delete">
                                     <span class="fe fe-trash-2"></span>
                                 </button>
                             </form>

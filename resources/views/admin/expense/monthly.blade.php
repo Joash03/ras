@@ -25,7 +25,7 @@
             </div>
             <div class="col-auto">
                 <!-- Buttons -->
-                <a href="{{ route('expense.create') }}" class="btn btn-outline-primary ms-2">Add Expense</a>
+                <a href="{{ route('expense.create') }}" class="btn btn-primary ms-2">Create Expense</a>
             </div>
           </div> <!-- / .row -->
         </div>

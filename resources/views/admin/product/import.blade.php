@@ -18,7 +18,7 @@
             </div>
             <div class="col-auto">
               <!-- Buttons -->
-              {{-- <a href="{{ route('product.export') }}" class="btn btn-outline-primary ms-2">
+              {{-- <a href="{{ route('product.export') }}" class="btn btn-primary ms-2">
                 Download Excel File
               </a> --}}
             </div>

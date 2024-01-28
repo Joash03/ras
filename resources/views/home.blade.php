@@ -15,7 +15,7 @@ $page_id = 0;
                     <!-- ... Your slide content ... -->
                     <div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.2)">
                         <div class="container">
-                            <div class="row">
+                            <div class="row" style="padding-top: 100px; padding-bottom: 0px;">
                                 <div class="col-lg-10 m-auto static">
                                     <div class="slide-text white text-center">
                                         <h2 class="owl-slide-animated owl-slide-title">{{ $slider->title }}</h2>
@@ -49,7 +49,7 @@ $page_id = 0;
             <div class="row justify-content-center d-flex align-items-center">
                 <div class="col-lg-5 text-lg-center d-none d-lg-block" data-cue="slideInUp">
                     <figure>
-                        <img src="{{ asset('frontend/img/home_1.jpg') }}" data-src="{{ asset('frontend/img/home_1.jpg') }}" width="354" height="440"
+                        <img src="{{ asset('frontend/img/35.jpg') }}" data-src="{{ asset('frontend/img/35.jpg') }}" width="354" height="440"
                             alt="" class="img-fluid lazy">
                         <a href="https://www.youtube.com/watch?v=MO7Hi_kBBBg" class="btn_play" data-cue="zoomIn"
                             data-delay="500"><span class="pulse_bt"><i class="arrow_triangle-right"></i></span></a>
@@ -71,7 +71,7 @@ $page_id = 0;
             <div class="row">
                 <div class="col-xl-4">
                     <a href="{{ route('menu') }}" class="img_container">
-                        <img src="{{ asset('frontend/img/banner_1.jpg') }}" class="lazy">
+                        <img src="{{ asset('frontend/img/15.jpg') }}" class="lazy">
                         <div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
                             <h3>Our Menu</h3>
                             <p>View Our Specialites</p>
@@ -89,7 +89,7 @@ $page_id = 0;
                 </div>
                 <div class="col-xl-4">
                     <a href="{{ route('contact') }}" class="img_container">
-                        <img src="{{ asset('frontend/img/banner_4.jpg') }}" class="lazy">
+                        <img src="{{ asset('frontend/img/13.jpg') }}" class="lazy">
                         <div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
                             <h3>Say Something?</h3>
                             <p>Send us a message</p>
@@ -98,7 +98,7 @@ $page_id = 0;
                 </div>
                 <div class="col-xl-4">
                     <a href="#homereservations" class="img_container">
-                        <img src="{{ asset('frontend/img/banner_5.jpg') }}" class="lazy">
+                        <img src="{{ asset('frontend/img/12.jpg') }}" class="lazy">
                         <div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
                             <h3>BOOK A TABLE</h3>
                             <p>Reserve a table for you</p>
@@ -107,7 +107,7 @@ $page_id = 0;
                 </div>
                 <div class="col-xl-4">
                     <a href="{{ route('gallery', 'photo') }}" class="img_container">
-                        <img src="{{ asset('frontend/img/banner_6.jpg') }}" class="lazy">
+                        <img src="{{ asset('frontend/img/14.jpg') }}" class="lazy">
                         <div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
                             <h3>Photo Gallery</h3>
                             <p>See photos from our latest event</p>
@@ -116,7 +116,7 @@ $page_id = 0;
                 </div>
                 <div class="col-xl-4">
                     <a href="{{ route('gallery', 'video') }}" class="img_container">
-                        <img src="{{ asset('frontend/img/banner_6.jpg') }}" class="lazy">
+                        <img src="{{ asset('frontend/img/11.jpg') }}" class="lazy">
                         <div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
                             <h3>Video Gallery</h3>
                             <p>See videos from our latest event</p>
@@ -161,7 +161,7 @@ $page_id = 0;
                 </div>
                 <div class="col-xl-4">
 
-                    <div class="banner lazy" data-bg="url({{ asset('frontend/img/banner_bg.jpg') }})">
+                    <div class="banner lazy" data-bg="url({{ asset('frontend/img/17.jpg') }})">
                         <div class="wrapper opacity-mask" data-opa city-mask="rgba(0, 0, 0, 0.5)" style="background-color: rgba(0, 0, 0, 0.5);">
                             <div class="text">
                                 <small>Special Offer</small>
@@ -193,15 +193,17 @@ $page_id = 0;
                 <div class="row">
                     <div class="col-xl-6 col-lg-5 col-md-6 text-center">
                         <div class="box_1" data-cue="slideInUp">
-                            <h2>Enjoy<span>a Special Event with us!</span></h2>
-                            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-                                consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-                            <a href="{{ route('contact') }}" class="btn_1 mt-3" style="padding-top: 11px; padding-bottom: 11px;">Contact us</a>
+                            <div class="my-5">
+                                <h2>Enjoy<span>a Special Event with us!</span></h2>
+                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                                    consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                                <a href="{{ route('contact') }}" class="btn_1 mt-3" style="padding-top: 11px; padding-bottom: 11px;">Contact us</a>
+                            </div>
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-5 col-md-6 text-center">
                         <div class="call_section_img" data-cue="slideInUp">
-                            <img src="{{ asset('frontend/img/bg_call_section.jpg') }}" alt="call" class="img-fluid">
+                            <img src="{{ asset('frontend/img/19.jpg') }}" alt="call" class="img-fluid">
                         </div>
                     </div>
                 </div>
@@ -334,7 +336,7 @@ $page_id = 0;
                 </div>
                 <div class="col-xl-4">
 
-                    <div class="banner lazy" data-bg="url({{ asset('frontend/img/banner_bg.jpg') }})">
+                    <div class="banner lazy" data-bg="url({{ asset('frontend/img/17.jpg') }})">
                         <div class="wrapper opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)" style="background-color: rgba(0, 0, 0, 0.5);">
                             <div class="text">
                                 <small>Special Offer</small>

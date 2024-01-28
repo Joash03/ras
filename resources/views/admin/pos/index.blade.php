@@ -25,10 +25,10 @@
             </div>
             <div class="col-auto">
                 <!-- Buttons -->
-                <a href="{{ route('menu.import') }}" class="btn btn-outline-primary ms-2">
+                <a href="{{ route('menu.import') }}" class="btn btn-outline-dark ms-2">
                    <span class="fe fe-upload"></span> Import Menu
                 </a>
-                <a href="{{ route('product.import') }}" class="btn btn-outline-dark ms-2">
+                <a href="{{ route('product.import') }}" class="btn btn-outline-primary ms-2">
                     <span class="fe fe-upload"></span> Import Product
                 </a>
             </div>
@@ -60,7 +60,6 @@
                                 <table class="table table-sm table-hover">
                                   <thead>
                                     <tr>
-                                      <th scope="list-sort text-muted">S/N</th>
                                       <th scope="list-sort text-muted">Name</th>
                                       <th scope="list-sort text-muted">Quantity</th>
                                       <th scope="list-sort text-muted">Price</th>
@@ -80,12 +79,10 @@
                                             <td  class="item-name h4 text-center">Cart Empty!</td>
                                             <td></td>
                                             <td></td>
-                                            <td></td>
                                         </tr>
                                     @else
                                     @foreach($allcart as $cart)
                                     <tr>
-                                      <th class="item-name text-reset">{{ $loop->index + 1 }}</th>
                                       <td class="item-name text-reset">{{ $cart->name }}</td>
                                       <td class="item-name text-reset">
                                         <input type="number" name="qty[{{ $cart->rowId }}]" class="form-control" value="{{ $cart->qty }}">
@@ -104,15 +101,16 @@
                                   </tbody>
                                 </table>
                             </div>
-                            <div class="row align-items-center mb-5">
+                            <div class="row align-items-center mb-5 mt-1">
                               <div class="col">
 
                               </div>
                               <div class="col-auto">
                                   <!-- Buttons -->
-                                  <button type="submit" class="btn btn-outline-primary ms-2">
-                                    <span class="fe fe-upload"></span> Update Cart</button>
-                                  <a href="{{ route('pos.empty') }}" class="btn btn-md btn-outline-danger ms-2 delete-button">
+                                  <button type="submit" class="btn btn-outline-dark ms-2">
+                                    <span class="fe fe-refresh-cw"></span> Update Cart
+                                  </button>
+                                  <a href="{{ route('pos.empty') }}" class="btn btn-outline-danger ms-2 delete-button">
                                       <span class="fe fe-trash-2"></span> Empty Cart
                                   </a>
                               </div>
@@ -149,7 +147,7 @@
                                             @foreach ($customers as $item)
                                             {
                                                 "value": "{{ $item->id }}",
-                                                "selected": "{{ $item->id == '3' ? 'selected' : '' }}",
+                                                "selected": "{{ $item->id == '2' ? 'selected' : '' }}",
                                                 "label": "{{ $item->name }}",
                                                 "customProperties": {
                                                     "avatarSrc": "{{ (!empty($item->photo)) ? url('uploads/customer_images/'.$item->photo) : url('uploads/no_image.jpg') }}"
@@ -202,7 +200,9 @@
                                 <input type="hidden" name="total" id="total" value="{{ Cart::total() }}">
                                 <!-- Buttons -->
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-outline-primary ms-2">Create Invoice</button>
+                                    <button type="submit" class="btn w-100 btn-primary">
+                                        <span class="fe fe-file-text"></span> Create Invoice
+                                    </button>
                                 </div>
                             </div>
                         </form>
@@ -284,7 +284,7 @@
                                                             <div class="col-auto">
                                                                 <span style="margin-right: 5px">
                                                                     <!-- Button -->
-                                                                    <button class="btn btn-outline-dark btn-sm" type="submit" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Add">
+                                                                    <button class="btn btn-outline-primary btn-sm" type="submit" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Add to Cart">
                                                                         <span class="fe fe-plus"></span>
                                                                     </button>
                                                                 </span>
@@ -389,7 +389,7 @@
                                                             <div class="col-auto">
                                                                 <span style="margin-right: 5px">
                                                                     <!-- Button -->
-                                                                    <button class="btn btn-outline-dark btn-sm" type="submit" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Add">
+                                                                    <button class="btn btn-outline-primary btn-sm" type="submit" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Add to Cart">
                                                                         <span class="fe fe-plus"></span>
                                                                     </button>
                                                                 </span>

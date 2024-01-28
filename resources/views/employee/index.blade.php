@@ -29,7 +29,7 @@
               </h2>
 
             {{-- <!-- Button -->
-            <a href="#!" class="btn btn-outline-primary lift">
+            <a href="#!" class="btn btn-primary lift">
               Create Report
             </a> --}}
 
@@ -98,7 +98,7 @@
                       </div>
                       <div class="col-auto">
                         <!-- Icon -->
-                        <span class="h2 fe fe-clipboard text-warning mb-0"></span>
+                        <span class="h2 fe fe-clipboard text-info mb-0"></span>
                       </div>
                     </div> <!-- / .row -->
                   </div>
@@ -139,12 +139,12 @@
                         </h6>
                         <!-- Heading -->
                         <span class="h2 mb-0">
-                          #{{ $advancesalary->advance_salary }}.00
+                          #{{ $advancesalary }}.00
                         </span>
                       </div>
                       <div class="col-auto">
                         <!-- Icon -->
-                        <span class="h2 fe fe-dollar-sign text-warning mb-0"></span>
+                        <span class="h2 fe fe-dollar-sign text-info mb-0"></span>
                       </div>
                     </div> <!-- / .row -->
                   </div>
@@ -167,7 +167,7 @@
                         </div>
                         <div class="col-auto">
                             <!-- Buttons -->
-                            <a class="btn btn-outline-primary ms-2" href="{{ route('customer.order.index', ['order_status' => '0']) }}">View All</a>
+                            <a class="btn btn-link ms-2" href="{{ route('employee.order.index', ['order_status' => '0']) }}">View All</a>
                         </div>
                       </div> <!-- / .row -->
                     </div>
@@ -235,7 +235,7 @@
                                                     $paymentStatusClass = 'bg-success-soft';
                                                     $paymentStatusText = 'Success';
                                                 } elseif ($item->payment_status === 2) {
-                                                    $paymentStatusClass = 'bg-warning-soft';
+                                                    $paymentStatusClass = 'bg-info-soft';
                                                     $paymentStatusText = 'Pending';
                                                 }
                                             @endphp
@@ -247,7 +247,7 @@
                                                 $orderStatusClass = '';
                                                 $orderStatusText = '';
                                                 if ($item->order_status === 0) {
-                                                    $orderStatusClass = 'bg-warning-soft';
+                                                    $orderStatusClass = 'bg-info-soft';
                                                     $orderStatusText = 'Pending';
                                                 } elseif ($item->order_status === 1) {
                                                     $orderStatusClass = 'bg-success-soft';

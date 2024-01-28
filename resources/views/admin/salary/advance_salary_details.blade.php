@@ -9,7 +9,7 @@
         <!-- Header -->
         <div class="header">
             <!-- Image -->
-            <img src="{{ asset('backend/assets/img/covers/profile-cover-1.jpg') }}" class="header-img-top" alt="...">
+            <img src="{{ asset('backend/assets/img/covers/profile-cover-1.jpg') }}"  class="header-img-top" style="height: 250px; object-fit: cover" alt="...">
               <!-- Body -->
               <div class="header-body border-0 mt-n5 mt-md-n6">
                 <div class="container-fluid">
@@ -28,10 +28,7 @@
                     </div>
                     <div class="col-12 col-md-auto mt-2 mb-md-3">
                         <!-- Button -->
-                        <a href="{{ route('salary.advance.add') }}" class="btn btn-outline-primary ms-2">Add Salary</a>
-
-                        <!-- Button -->
-                        <a href="{{ route('salary.advance.edit', $salaryDetails->employee_id) }}" class="btn btn-outline-primary ms-2">Edit Salary</a>
+                        <a href="{{ route('salary.advance.edit', $salaryDetails->employee_id) }}" class="btn btn-primary ms-2">Edit Employee Salary</a>
                     </div>
                   </div> <!-- / .row -->
                   <div class="row card mt-5">

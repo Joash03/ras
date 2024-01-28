@@ -310,7 +310,7 @@
                     </div>
                     <div class="col text-end">
                         <!-- Step -->
-                        <h5 class="text-uppercase text-muted mb-0">Step 3 of 3</h5>
+                        <h5 class="text-uppercase text-muted mb-0">Step 3 zof 3</h5>
                     </div>
                     <div class="col-auto">
                         <!-- Buttons -->

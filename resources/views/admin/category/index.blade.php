@@ -31,7 +31,7 @@
               <a href="{{ route('category.export') }}" class="btn btn-outline-danger ms-2" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="Export Category">
                 <span class="fe fe-download"></span>
               </a>
-              <a href="{{ route('category.create') }}" class="btn btn-outline-primary ms-2">Add Category</a>
+              <a href="{{ route('category.create') }}" class="btn btn-primary ms-2"> Create Category </a>
             </div>
           </div> <!-- / .row -->
         </div>
@@ -121,7 +121,7 @@
                                 $typeClass = 'bg-danger-soft';
                                 $typeText = 'Blog';
                             } elseif ($item->type === 3) {
-                                $typeClass = 'bg-warning-soft';
+                                $typeClass = 'bg-success-soft';
                                 $typeText = 'Store';
                             }
                         @endphp

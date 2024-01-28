@@ -19,7 +19,7 @@
             </div>
             <div class="col-auto">
               <!-- Buttons -->
-              <a href="{{ route('role.add') }}" class="btn-outline-primary ms-2">Add Role</a>
+              <a href="{{ route('role.add') }}" class="btn btn-primary ms-2">Create Role</a>
             </div>
           </div> <!-- / .row -->
         </div>

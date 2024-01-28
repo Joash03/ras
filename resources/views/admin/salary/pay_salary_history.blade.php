@@ -9,7 +9,7 @@
         <!-- Header -->
         <div class="header">
             <!-- Image -->
-            <img src="{{ asset('backend/assets/img/covers/profile-cover-1.jpg') }}" class="header-img-top" alt="...">
+            <img src="{{ asset('backend/assets/img/covers/profile-cover-1.jpg') }}"  class="header-img-top" style="height: 250px; object-fit: cover" alt="...">
               <!-- Body -->
               <div class="header-body border-0 mt-n5 mt-md-n6">
                 <div class="container-fluid">
@@ -34,7 +34,7 @@
                       <div class="mb-3">
                         <ul class="list-group list-group-flush">
                           <li class="list-group-item d-flex align-items-center justify-content-between px-0">
-                            <h4 class="fw-normal mb-1">Salary Status</h4> <h4 class="fw-normal mb-1"><span class="item-score badge bg-info-soft">Fully Paid</span></h4>
+                            <h4 class="fw-normal mb-1">Salary Status</h4> <h4 class="fw-normal mb-1"><span class="item-score badge bg-success-soft">Fully Paid</span></h4>
                           </li>
                           <li class="list-group-item d-flex align-items-center justify-content-between px-0">
                             <h4 class="fw-normal mb-1">Email</h4> <h4 class="fw-normal mb-1">{{ $paysalaryHistory->user->email }}</h4>

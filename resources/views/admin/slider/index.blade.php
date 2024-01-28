@@ -18,8 +18,8 @@
             </div>
             <div class="col-auto">
               <!-- Buttons -->
-              <a href="{{ route('slider.create') }}" class="btn btn-outline-primary ms-2">
-                Add Slider
+              <a href="{{ route('slider.create') }}" class="btn btn-primary ms-2">
+                Create Slider
               </a>
             </div>
           </div> <!-- / .row -->

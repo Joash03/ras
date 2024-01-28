@@ -109,7 +109,7 @@
                             @if ($item->status == 'present')
                                 <span class="item-score badge bg-info-soft">Present</span>
                             @elseif ($item->status == 'leave')
-                                <span class="item-score badge bg-warning-soft">Leave</span>
+                                <span class="item-score badge bg-info-soft">Leave</span>
                             @else
                                 <span class="item-score badge bg-danger-soft">Absent</span>
                             @endif

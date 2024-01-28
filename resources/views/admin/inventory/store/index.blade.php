@@ -25,7 +25,7 @@
             </div>
             <div class="col-auto">
               <!-- Buttons -->
-              <a href="{{ route('inventory.store.add') }}" class="btn btn-outline-primary ms-2">Add Store Item</a>
+              <a href="{{ route('inventory.store.add') }}" class="btn btn-primary ms-2">Create Store Item</a>
             </div>
           </div> <!-- / .row -->
         </div>

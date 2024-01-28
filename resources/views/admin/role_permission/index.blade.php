@@ -19,7 +19,7 @@
             </div>
             <div class="col-auto">
               <!-- Buttons -->
-              <a href="{{ route('role.permission.add') }}" class="btn btn-outline-primary ms-2">Add Role Permissions</a>
+              <a href="{{ route('role.permission.add') }}" class="btn btn-primary ms-2">Create Role Permissions</a>
             </div>
           </div> <!-- / .row -->
         </div>

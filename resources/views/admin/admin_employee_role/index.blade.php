@@ -19,7 +19,7 @@
             </div>
             <div class="col-auto">
               <!-- Buttons -->
-              <a href="{{ route('admin.employee.role.add') }}" class="btn btn-outline-primary ms-2">Add Employe Role</a>
+              <a href="{{ route('admin.employee.role.add') }}" class="btn btn-primary ms-2">Create Employe Role</a>
             </div>
           </div> <!-- / .row -->
         </div>

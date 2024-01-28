@@ -114,7 +114,7 @@
                         </td>
                         <td>
                         <!-- Status Badge -->
-                        <span class="item-score badge {{ $item->status === 0 ? 'bg-warning-soft':($item->status === 1 ? 'bg-info-soft':'bg-danger-soft') }}">{{ $item->status === 0 ? 'Pending':($item->status === 1 ? 'Reserved':'Canceled') }}</span>
+                        <span class="item-score badge {{ $item->status === 0 ? 'bg-info-soft':($item->status === 1 ? 'bg-info-soft':'bg-danger-soft') }}">{{ $item->status === 0 ? 'Pending':($item->status === 1 ? 'Reserved':'Canceled') }}</span>
                         </td>
                         <td>
                             <div class="d-flex align-items-center ">
@@ -130,13 +130,13 @@
                                 @endphp
                                 <span class="{{ $buttonhidecomfirm }}" style="margin-right: 5px">
                                     <!-- Button -->
-                                    <a class="btn btn-outline-dark btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Accept" href="{{ route('reserve.confirmation',['accept', $item->id]) }}">
+                                    <a class="btn btn-outline-success btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Accept" href="{{ route('reserve.confirmation',['accept', $item->id]) }}">
                                         <span class="fe fe-check"></span>
                                     </a>
                                 </span>
                                 <span class="{{ $buttonhidecomfirm }}" style="margin-right: 5px">
                                     <!-- Button -->
-                                    <a class="btn btn-outline-warning btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Decline" href="{{ route('reserve.confirmation',['decline', $item->id]) }}">
+                                    <a class="btn btn-outline-danger btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Decline" href="{{ route('reserve.confirmation',['decline', $item->id]) }}">
                                         <span class="fe fe-x"></span>
                                     </a>
                                 </span>
@@ -144,7 +144,7 @@
                                 @csrf
                                 @method('DELETE')
                                     <!-- Button to trigger deletion -->
-                                    <button type="submit" class="{{ $buttonhidedelete }} btn btn-outline-danger btn-sm delete-button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Delete Declined Reservation">
+                                    <button type="submit" class="{{ $buttonhidedelete }} btn btn-danger btn-sm delete-button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Delete Declined Reservation">
                                         <span class="fe fe-trash-2"></span>
                                     </button>
                                 </form>

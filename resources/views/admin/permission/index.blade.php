@@ -25,7 +25,7 @@
               <a href="{{ route('permission.export') }}" class="btn btn-outline-danger ms-2" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="Export Permission">
                 <span class="fe fe-download"></span>
               </a>
-              <a href="{{ route('permission.add') }}" class="btn btn-outline-primary ms-2">Add Permission</a>
+              <a href="{{ route('permission.add') }}" class="btn btn-primary ms-2">Create Permission</a>
             </div>
           </div> <!-- / .row -->
         </div>

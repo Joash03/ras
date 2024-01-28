@@ -60,7 +60,7 @@
                     </div>
                     <div class="col-auto">
                         <!-- Buttons -->
-                        <a class="btn btn-outline-dark ms-2" href="{{ route('inventory.product.outofstock.edit') }}">Edit Product Stock</a>
+                        <a class="btn btn-dark ms-2" href="{{ route('inventory.product.outofstock.edit') }}">Edit Product Stock</a>
                     </div>
                 </div> <!-- / .row -->
                 </div>
@@ -178,8 +178,8 @@
                     </div>
                     <div class="col-auto">
                         <!-- Buttons -->
-                        <a class="btn btn-outline-dark ms-2" onclick="resetPage()">Reset Input</a>
-                        <button class="btn btn-outline-primary ms-2" type="submit">Update Product Stock</button>
+                        <a class="btn btn-dark ms-2" onclick="resetPage()">Reset Input</a>
+                        <button class="btn btn-primary ms-2" type="submit">Update Product Stock</button>
                     </div>
                 </div> <!-- / .row -->
                 </div>

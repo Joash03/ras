@@ -29,6 +29,7 @@ use App\Models\Service;
 use App\Models\Slider;
 use App\Models\General;
 use App\Models\Team;
+use App\Models\Testimonial;
 use App\Models\Reserve;
 use App\Models\Order;
 use App\Models\Orderdetails;
@@ -176,15 +177,16 @@ class AdminController extends Controller
     // Start Employee Method
     public function AllEmployee()
     {
-        if (request('status') == 'current') {
+        if (request('status') == 'active') {
             $employees = Employee::join('users', 'employees.employee_id', '=', 'users.id')->where('status', 'active')->latest('employees.created_at')->get();
             $page_title = 'Current Employee Index';
+            return view('admin.employee.employee_index', compact('employees', 'page_title'));
         }
-        elseif (request('status') == 'former') {
+        elseif (request('status') == 'inactive') {
             $employees = Employee::join('users', 'employees.employee_id', '=', 'users.id')->where('status', 'inactive')->latest('employees.created_at')->get();
             $page_title = 'Former Employee Index';
+            return view('admin.employee.employee_index', compact('employees', 'page_title'));
         }
-        return view('admin.employee.employee_index', compact('employees', 'page_title'));
     }// End Method
     public function GetEmployeeDetails($id)
     {
@@ -263,9 +265,10 @@ class AdminController extends Controller
             'appointment_date' => $request->appointment_date,
         ]);
 
+        $status = $request->status;
         Alert::success('Success', 'Employee created successfully!')->showConfirmButton('OK', '#3085d6');
 
-        return redirect()->route('employee.all');
+        return redirect()->route('employee.all',  compact('status'));
     }// End Method
     public function EditEmployee($id)
     {
@@ -337,9 +340,10 @@ class AdminController extends Controller
         $employee->appointment_date = $request->appointment_date;
         $employee->save();
 
+        $status = $request->status;
         Alert::success('Success', 'Employee updated successfully!')->showConfirmButton('OK', '#3085d6');
 
-        return redirect()->route('employee.all');
+        return redirect()->route('employee.all',  compact('status'));
     }// End Method
     public function DeleteEmployee($id, Request $request)
     {
@@ -351,16 +355,16 @@ class AdminController extends Controller
             $employee->delete();
 
             // Now, delete the user record
-            $user = User::find($id);
+            $employee = User::find($id);
 
-            if ($user) {
+            if ($employee) {
                 // Delete the user's photo (if exists)
                 if (!empty($employee->photo) && file_exists(public_path('uploads/employee_images/' . $employee->photo))) {
                     unlink(public_path('uploads/employee_images/' . $employee->photo));
                 }
 
                 // Delete the user record
-                $user->delete();
+                $employee->delete();
             }
         }
 
@@ -372,11 +376,11 @@ class AdminController extends Controller
     // Start Customer Method
     public function AllCustomer()
     {
-        if (request('status') == 'current') {
+        if (request('status') == 'active') {
             $customers = User::where('role', 'customer')->where('status', 'active')->latest('created_at')->get();
             $page_title = 'Current Customers Index';
         }
-        elseif (request('status') == 'former') {
+        elseif (request('status') == 'inactive') {
             $customers = User::where('role', 'customer')->where('status', 'inactive')->latest('created_at')->get();
             $page_title = 'Former Customers Index';
         }
@@ -429,9 +433,10 @@ class AdminController extends Controller
 
         $user->save();
 
+        $status = $request->status;
         Alert::success('Success', 'Customer created successfully!')->showConfirmButton('OK', '#3085d6');
 
-        return redirect()->route('customer.all');
+        return redirect()->route('customer.all',  compact('status'));
     }// End Method
     public function EditCustomer($id)
     {
@@ -472,23 +477,24 @@ class AdminController extends Controller
 
         $user->save();
 
+        $status = $request->status;
         Alert::success('Success', 'Customer updated successfully!')->showConfirmButton('OK', '#3085d6');
 
-        return redirect()->route('customer.all');
+        return redirect()->route('customer.all',  compact('status'));
     }// End Method
     public function DeleteCustomer($id, Request $request)
     {
         // Find the customer record by the user ID
-        $user = User::find($id);
+        $customer = User::find($id);
 
-        if ($user) {
+        if ($customer) {
             // Delete the user's photo (if exists)
             if (!empty($customer->photo) && file_exists(public_path('uploads/customer_images/' . $customer->photo))) {
                 unlink(public_path('uploads/customer_images/' . $customer->photo));
             }
 
             // Delete the user record
-            $user->delete();
+            $customer->delete();
         }
         return back();
     }// End Method
@@ -604,16 +610,16 @@ class AdminController extends Controller
     public function DeleteSupplier($id, Request $request)
     {
         // Find the supplier record by the user ID
-        $user = Supplier::find($id);
+        $supplier = Supplier::find($id);
 
-        if ($user) {
+        if ($supplier) {
             // Delete the user's photo (if exists)
             if (!empty($supplier->photo) && file_exists(public_path('uploads/supplier_images/' . $supplier->photo))) {
                 unlink(public_path('uploads/supplier_images/' . $supplier->photo));
             }
 
             // Delete the user record
-            $user->delete();
+            $supplier->delete();
         }
         return back();
     }// End Method
@@ -1734,11 +1740,11 @@ class AdminController extends Controller
         $order = Order::find($orderid);
         $orderdetails = $order->orderdetails;
 
-        $cust_id = $order->user_id;
-        $customer = User::where('role', 'customer')->where('id',$cust_id)->first();
+        $user_id = $order->user_id;
+        $user = User::where('id',$user_id)->first();
         Cart::destroy();
 
-        return view('admin.invoice.index', compact('page_title', 'order', 'customer', 'orderdetails'));
+        return view('admin.invoice.index', compact('page_title', 'order', 'user', 'orderdetails'));
 
     }// End Method
     // End Invoice Method
@@ -2709,8 +2715,8 @@ class AdminController extends Controller
 
         if ($team) {
             // Delete the team photo (if exists)
-            if (!empty($team->photo) && file_exists(public_path('uploads/team_images/' . $team->photo))) {
-                unlink(public_path('uploads/team_images/' . $team->photo));
+            if (!empty($team->thumbnail) && file_exists(public_path('uploads/team_images/' . $team->thumbnail))) {
+                unlink(public_path('uploads/team_images/' . $team->thumbnail));
             }
 
             // Delete the team record
@@ -2721,6 +2727,110 @@ class AdminController extends Controller
 
     }// End Method
     // End Team Method
+
+
+    // Start Testimonial Method
+    public function AllTestimonial()
+    {
+        $page_title = "Testimonial List";
+        $testimonials = Testimonial::all();
+        return view('admin.testimonial.index', compact('page_title', 'testimonials'));
+    }// End Method
+    public function AddTestimonial()
+    {
+        $page_title = 'Testimonial Create';
+        return view('admin.testimonial.create', compact('page_title'));
+    }// End Method
+    public function StoreTestimonial(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'message' => 'required',
+            'photo' => 'required|mimes:jpg,jpeg,png'
+        ]);
+
+        $testimonial = new Testimonial;
+        $testimonial->name = $request->name;
+        $testimonial->message = $request->message;
+
+        if ($request->file('photo')) {
+            $file = $request->file('photo');
+            @unlink(public_path('uploads\\testimonial_images\\' . $testimonial->photo));
+            $filename = date('YmdHi') . $file->getClientOriginalName();
+
+            if (!is_dir(public_path('uploads\\testimonial_images'))) {
+                mkdir(public_path('uploads\\testimonial_images'), 0755, true);
+            }
+
+            Image::make($file)->save(public_path('uploads\\testimonial_images\\' . $filename));
+            $testimonial->photo = $filename;
+        }
+
+        $testimonial->save();
+
+        Alert::success('Success', 'Testimonial created successfully!')->showConfirmButton('OK', '#3085d6');
+
+        return redirect()->route('testimonial.index');
+    }// End Method
+    public function EditTestimonial($id)
+    {
+        // Retrieve the testimonial by ID
+        $testimonial = Testimonial::where('id', '=', $id)->first();
+        $page_title = 'Testimonial Edit';
+
+        return view('admin.testimonial.edit', compact('page_title', 'testimonial'));
+    }// End Method
+    public function UpdateTestimonial(Request $request, $id)
+    {
+        $user_id = Auth::user()->id;
+
+        $request->validate([
+            'name' => 'required',
+            'message' => 'required'
+        ]);
+
+        $testimonial = Testimonial::findOrFail($id);
+        $testimonial->name = trim($request->name);
+        $testimonial->message = trim($request->message);
+
+        if ($request->file('photo')) {
+            $file = $request->file('photo');
+            @unlink(public_path('uploads\\testimonial_images\\' . $testimonial->photo));
+            $filename = date('YmdHi') . $file->getClientOriginalName();
+
+            if (!is_dir(public_path('uploads\\testimonial_images'))) {
+                mkdir(public_path('uploads\\testimonial_images'), 0755, true);
+            }
+
+            Image::make($file)->save(public_path('uploads\\testimonial_images\\' . $filename));
+            $testimonial->photo = $filename;
+        }
+
+        $testimonial->save();
+
+        Alert::success('Success', 'Testimonial Updated Successfully!')->showConfirmButton('OK', '#3085d6');
+
+        return redirect()->route('testimonial.index');
+    }// End Method
+    public function DeleteTestimonial($id)
+    {
+        // Find the testimonial record by the user ID
+        $testimonial = Testimonial::find($id);
+
+        if ($testimonial) {
+            // Delete the testimonial photo (if exists)
+            if (!empty($testimonial->photo) && file_exists(public_path('uploads/testimonial_images/' . $testimonial->photo))) {
+                unlink(public_path('uploads/testimonial_images/' . $testimonial->photo));
+            }
+
+            // Delete the testimonial record
+            $testimonial->delete();
+        }
+        // Return a response or redirect as needed
+        return back();
+
+    }// End Method
+    // End Testimonial Method
 
 
     // Start General Method

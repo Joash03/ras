@@ -31,7 +31,7 @@
             </h2>
 
           {{-- <!-- Button -->
-          <a href="#!" class="btn btn-outline-primary lift">
+          <a href="#!" class="btn btn-primary lift">
             Create Report
           </a> --}}
 
@@ -101,7 +101,7 @@
                     </div>
                     <div class="col-auto">
                       <!-- Icon -->
-                      <span class="h2 fe fe-dollar-sign text-warning mb-0"></span>
+                      <span class="h2 fe fe-dollar-sign text-danger mb-0"></span>
                     </div>
                   </div> <!-- / .row -->
                 </div>
@@ -172,7 +172,7 @@
                     </div>
                     <div class="col-auto">
                       <!-- Icon -->
-                      <span class="h2 fe fe-users text-warning mb-0"></span>
+                      <span class="h2 fe fe-users text-danger mb-0"></span>
                     </div>
                   </div> <!-- / .row -->
                 </div>
@@ -243,7 +243,7 @@
                     </div>
                     <div class="col-auto">
                       <!-- Icon -->
-                      <span class="h2 fe fe-circle text-warning mb-0"></span>
+                      <span class="h2 fe fe-circle text-danger mb-0"></span>
                     </div>
                   </div> <!-- / .row -->
                 </div>
@@ -289,7 +289,7 @@
                     </div>
                     <div class="col-auto">
                       <!-- Icon -->
-                      <span class="h2 fe fe-archive text-warning mb-0"></span>
+                      <span class="h2 fe fe-archive text-danger mb-0"></span>
                     </div>
                   </div> <!-- / .row -->
                 </div>
@@ -337,7 +337,7 @@
                     </div>
                     <div class="col-auto">
                       <!-- Icon -->
-                      <span class="h2 fe fe-clipboard text-warning mb-0"></span>
+                      <span class="h2 fe fe-clipboard text-danger mb-0"></span>
                     </div>
                   </div> <!-- / .row -->
                 </div>
@@ -383,7 +383,7 @@
                     </div>
                     <div class="col-auto">
                       <!-- Icon -->
-                      <span class="h2 fe fe-edit text-warning mb-0"></span>
+                      <span class="h2 fe fe-edit text-danger mb-0"></span>
                     </div>
                   </div> <!-- / .row -->
                 </div>
@@ -535,7 +535,9 @@
                     </div>
                     <div class="col-auto">
                         <!-- Buttons -->
-                        <a class="btn btn-outline-primary ms-2" href="{{ route('order.index') }}">View All</a>
+                        <a class="btn btn-link ms-2" href="{{ route('order.index') }}">
+                            View Details
+                        </a>
                     </div>
                   </div> <!-- / .row -->
                 </div>
@@ -599,7 +601,7 @@
                                                 $paymentStatusClass = 'bg-success-soft';
                                                 $paymentStatusText = 'Success';
                                             } elseif ($item->payment_status === 2) {
-                                                $paymentStatusClass = 'bg-warning-soft';
+                                                $paymentStatusClass = 'bg-info-soft';
                                                 $paymentStatusText = 'Pending';
                                             }
                                         @endphp
@@ -786,7 +788,9 @@
                     </div>
                     <div class="col-auto">
                         <!-- Buttons -->
-                        <a class="btn btn-outline-primary ms-2"  href="{{ route('reserve.index') }}">View All</a>
+                        <a class="btn btn-link ms-2"  href="{{ route('reserve.index') }}">
+                            View Details
+                        </a>
                     </div>
                   </div> <!-- / .row -->
                 </div>
@@ -848,7 +852,7 @@
                                     </td>
                                     <td>
                                     <!-- Status Badge -->
-                                    <span class="item-score badge {{ $item->status === 0 ? 'bg-warning-soft':($item->status === 1 ? 'bg-info-soft':'bg-danger-soft') }}">{{ $item->status === 0 ? 'Pending':($item->status === 1 ? 'Reserved':'Canceled') }}</span>
+                                    <span class="item-score badge {{ $item->status === 0 ? 'bg-info-soft':($item->status === 1 ? 'bg-info-soft':'bg-danger-soft') }}">{{ $item->status === 0 ? 'Pending':($item->status === 1 ? 'Reserved':'Canceled') }}</span>
                                     </td>
                                 </tr>
                             @endforeach
@@ -876,7 +880,9 @@
                     <div class="col-auto">
                         <!-- Buttons -->
                         @if(Auth::user()->can('inventory.product.menu'))
-                        <a class="btn btn-outline-primary ms-2" href="{{  route('inventory.product.outofstock') }}">View All</a>
+                        <a class="btn btn-outline-primary btn-sm" href="{{  route('inventory.product.outofstock') }}" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="View Details">
+                            <span class="fe fe-eye"></span>
+                        </a>
                         @endif
                     </div>
                   </div> <!-- / .row -->
@@ -917,7 +923,7 @@
                                             <div class="col-auto">
                                                 <span style="margin-right: 5px">
                                                     <!-- Button -->
-                                                    <a class="btn btn-outline-dark btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Add" href="{{ route('product.edit', $item->id) }}">
+                                                    <a class="btn btn-dark btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Add" href="{{ route('product.edit', $item->id) }}">
                                                         <span class="fe fe-plus"></span>
                                                     </a>
                                                 </span>
@@ -951,7 +957,9 @@
           </h4>
 
           <!-- Button -->
-          <a class="small" href="#!">View all</a>
+          <a class="small" href="#!">
+                View Details
+          </a>
 
         </div>
         <div class="card-body">
@@ -1070,7 +1078,9 @@
                     <div class="col-auto">
                         <!-- Buttons -->
                         @if(Auth::user()->can('inventory.product.menu'))
-                        <a class="btn btn-outline-primary ms-2" href="{{ route('inventory.product.expiredproduct') }}">View All</a>
+                        <a class="btn btn-outline-primary btn-sm" href="{{ route('inventory.product.expiredproduct') }}" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="View Details">
+                            <span class="fe fe-eye"></span>
+                        </a>
                         @endif
                     </div>
                   </div> <!-- / .row -->
@@ -1111,7 +1121,7 @@
                                             <div class="col-auto">
                                                 <span style="margin-right: 5px">
                                                     <!-- Button -->
-                                                    <a class="btn btn-outline-dark btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Edit" href="{{ route('product.edit', $item->id) }}">
+                                                    <a class="btn btn-dark btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Edit" href="{{ route('product.edit', $item->id) }}">
                                                         <span class="fe fe-edit"></span>
                                                     </a>
                                                 </span>
