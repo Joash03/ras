@@ -80,8 +80,8 @@
                 text: 'Are you sure you want to delete this item?',
                 icon: 'warning',
                 showCancelButton: true,
-                confirmButtonColor: '#d33',
-                cancelButtonColor: '#3085d6',
+                confirmButtonColor: '#ED1C24',
+                cancelButtonColor: '#CE7F36',
                 confirmButtonText: 'Yes, delete it!'
             }).then((result) => {
                 if (result.isConfirmed) {

@@ -35,7 +35,7 @@ class PasswordResetLinkController extends Controller
         );
 
         if ($status == Password::RESET_LINK_SENT) {
-            Alert::success('Success', 'A password reset link has been sent to your email address!')->showConfirmButton('OK', '#3085d6');
+            Alert::success('Success', 'A password reset link has been sent to your email address!')->showConfirmButton('OK', '#CE7F36');
             return redirect()->route('home')->with('status', __($status));
         } else {
             Alert::error('Error', 'Password Reset link failed to send!')->toast();

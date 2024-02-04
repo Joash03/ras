@@ -73,7 +73,7 @@ class WebsiteController extends Controller
         ];
         Mail::to($reserve->email)->send(new Reservation($data));
 
-        Alert::success('Success', 'Reservation submitted Successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Reservation submitted Successfully!')->showConfirmButton('OK', '#CE7F36');
         return redirect()->route('home.reserve');
     } // End Method
 
@@ -189,7 +189,7 @@ class WebsiteController extends Controller
 
         $general = General::first();
         Mail::to($general->email)->send(new Contact($data));
-        Alert::success('Success', 'Message Sent Successfuly!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Message Sent Successfuly!')->showConfirmButton('OK', '#CE7F36');
 
         return back();
     } // End Method
@@ -243,7 +243,7 @@ class WebsiteController extends Controller
 
             if ($cartCount >= 7)
             {
-                Alert::info('Cart Full', 'The cart is Full! Please Checkout')->showConfirmButton('OK', '#3085d6');
+                Alert::info('Cart Full', 'The cart is Full! Please Checkout')->showConfirmButton('OK', '#CE7F36');
 
                 if ($page_id == 0) {
                     return redirect()->route('home.menu');
@@ -272,7 +272,7 @@ class WebsiteController extends Controller
 
             if ($cartCount >= 7)
             {
-                Alert::info('Cart Full', 'The cart is Full! Please Checkout')->showConfirmButton('OK', '#3085d6');
+                Alert::info('Cart Full', 'The cart is Full! Please Checkout')->showConfirmButton('OK', '#CE7F36');
 
                 if ($page_id == 0) {
                     return redirect()->route('home.menu');
@@ -295,7 +295,7 @@ class WebsiteController extends Controller
             }
         }
 
-        Alert::success('Success', 'Menu item added to Cart!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Menu item added to Cart!')->showConfirmButton('OK', '#CE7F36');
 
         if ($page_id == 0) {
             return redirect()->route('home.menu');
@@ -317,7 +317,7 @@ class WebsiteController extends Controller
 
             if ($cartCount >= 7)
             {
-                Alert::info('Cart Full', 'The cart is Full! Please Checkout')->showConfirmButton('OK', '#3085d6');
+                Alert::info('Cart Full', 'The cart is Full! Please Checkout')->showConfirmButton('OK', '#CE7F36');
 
                 if ($page_id == 0) {
                     return redirect()->route('home.product');
@@ -346,7 +346,7 @@ class WebsiteController extends Controller
 
             if ($cartCount >= 7)
             {
-                Alert::info('Cart Full', 'The cart is Full! Please Checkout')->showConfirmButton('OK', '#3085d6');
+                Alert::info('Cart Full', 'The cart is Full! Please Checkout')->showConfirmButton('OK', '#CE7F36');
 
                 if ($page_id == 0) {
                     return redirect()->route('home.product');
@@ -369,7 +369,7 @@ class WebsiteController extends Controller
             }
         }
 
-        Alert::success('Success', 'Product item added to Cart!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Product item added to Cart!')->showConfirmButton('OK', '#CE7F36');
 
         if ($page_id == 0) {
             return redirect()->route('home.product');
@@ -410,7 +410,7 @@ class WebsiteController extends Controller
             ]);
         }
 
-        Alert::success('Success', 'Cart Updated Successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Cart Updated Successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect(route('getcart', $user));
     } // End Method
@@ -418,7 +418,6 @@ class WebsiteController extends Controller
     public function destroyCart(WebCart $cart, $user = null)
     {
         $cart->delete();
-        Alert::success('Success', 'Item Deleted Successfully!')->showConfirmButton('OK', '#3085d6');
 
         return redirect()->back();
     } // End Method
@@ -431,7 +430,7 @@ class WebsiteController extends Controller
             $cartCount = WebCart::where('user_id', $user)->count();
 
             if ($cartCount == 0) {
-                Alert::info('Cart Empty', 'The cart is Empty! Please add an item')->showConfirmButton('OK', '#3085d6');
+                Alert::info('Cart Empty', 'The cart is Empty! Please add an item')->showConfirmButton('OK', '#CE7F36');
                 return back();
             }
             else {
@@ -443,7 +442,7 @@ class WebsiteController extends Controller
             $cartCount = WebCart::where('session_key', $sessionKey)->count();
 
             if ($cartCount == 0) {
-                Alert::info('Cart Empty', 'The cart is Empty! Please add an item')->showConfirmButton('OK', '#3085d6');
+                Alert::info('Cart Empty', 'The cart is Empty! Please add an item')->showConfirmButton('OK', '#CE7F36');
                 return back();
             }
             else {
@@ -559,7 +558,7 @@ class WebsiteController extends Controller
             }
 
             WebCart::where('user_id', $user)->delete();
-            Alert::success('Success', 'Order Placed Successfully!')->showConfirmButton('OK', '#3085d6');
+            Alert::success('Success', 'Order Placed Successfully!')->showConfirmButton('OK', '#CE7F36');
 
             $user = User::find($user);
             if ($user->role === 'employee'){
@@ -619,7 +618,7 @@ class WebsiteController extends Controller
             }
 
             WebCart::where('user_id', $user)->delete();
-            Alert::success('Success', 'Order Placed Successfully!')->showConfirmButton('OK', '#3085d6');
+            Alert::success('Success', 'Order Placed Successfully!')->showConfirmButton('OK', '#CE7F36');
 
             return redirect()->route('customer.order.index', ['order_status' => '0'] );
         }

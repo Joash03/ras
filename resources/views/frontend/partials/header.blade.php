@@ -158,8 +158,8 @@ $(document).ready(function () {
             text: 'Are you sure you want to delete this item?',
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#d33',
-            cancelButtonColor: '#3085d6',
+            confirmButtonColor: '#ED1C24',
+            cancelButtonColor: '#CE7F36',
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
@@ -169,7 +169,8 @@ $(document).ready(function () {
                     title: 'Success',
                     text: 'Item has been deleted successfully!',
                     icon: 'success',
-                    showConfirmButton: true
+                    showConfirmButton: true,
+                    confirmButtonColor: '#CE7F36'
                 });
             } else {
                 // If cancel button is clicked, show a cancel message
@@ -177,7 +178,8 @@ $(document).ready(function () {
                     title: 'Cancelled',
                     text: 'Delete action has been cancelled!',
                     icon: 'info',
-                    showConfirmButton: true
+                    showConfirmButton: true,
+                    confirmButtonColor: '#CE7F36'
                 });
             }
         });

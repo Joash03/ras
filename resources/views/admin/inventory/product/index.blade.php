@@ -176,8 +176,8 @@
               text: 'Are you sure you want to delete this Product?',
               icon: 'warning',
               showCancelButton: true,
-              confirmButtonColor: '#d33',
-              cancelButtonColor: '#3085d6',
+              confirmButtonColor: '#ED1C24',
+              cancelButtonColor: '#CE7F36',
               confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
               if (result.isConfirmed) {
@@ -187,7 +187,8 @@
                       title: 'Success',
                       text: 'Product has been deleted successfully!',
                       icon: 'success',
-                      showConfirmButton: true
+                      showConfirmButton: true,
+                      confirmButtonColor: '#CE7F36'
                   });
               }
               else {
@@ -195,8 +196,9 @@
                   Swal.fire({
                       title: 'Cancelled',
                       text: 'Delete action has been cancelled!',
-                      icon: 'info',
-                      showConfirmButton: true
+                    icon: 'info',
+                    showConfirmButton: true,
+                    confirmButtonColor: '#CE7F36'
                   });
               }
           });

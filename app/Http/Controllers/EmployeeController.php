@@ -77,7 +77,7 @@ class EmployeeController extends Controller
         }
 
         $formData->save();
-        Alert::success('Success', 'Profile Updated Successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Profile Updated Successfully!')->showConfirmButton('OK', '#CE7F36');
         return redirect()->back();
     }// End Method
     public function ChangePassword()
@@ -98,7 +98,7 @@ class EmployeeController extends Controller
         // Match The Old Password
         if (!Hash::check($request->old_password, auth::user()->password)) {
 
-            Alert::error('Error', 'Old Password does not Match!')->showConfirmButton('OK', '#3085d6');
+            Alert::error('Error', 'Old Password does not Match!')->showConfirmButton('OK', '#CE7F36');
             return back();
 
         }

@@ -136,7 +136,7 @@ class AdminController extends Controller
         }
 
         $formData->save();
-        Alert::success('Success', 'Profile Updated Successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Profile Updated Successfully!')->showConfirmButton('OK', '#CE7F36');
         return redirect()->back();
     }// End Method
     public function ChangePassword()
@@ -157,7 +157,7 @@ class AdminController extends Controller
         // Match The Old Password
         if (!Hash::check($request->old_password, auth::user()->password)) {
 
-            Alert::error('Error', 'Old Password does not Match!')->showConfirmButton('OK', '#3085d6');
+            Alert::error('Error', 'Old Password does not Match!')->showConfirmButton('OK', '#CE7F36');
             return back();
 
         }
@@ -266,7 +266,7 @@ class AdminController extends Controller
         ]);
 
         $status = $request->status;
-        Alert::success('Success', 'Employee created successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Employee created successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect()->route('employee.all',  compact('status'));
     }// End Method
@@ -341,7 +341,7 @@ class AdminController extends Controller
         $employee->save();
 
         $status = $request->status;
-        Alert::success('Success', 'Employee updated successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Employee updated successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect()->route('employee.all',  compact('status'));
     }// End Method
@@ -434,7 +434,7 @@ class AdminController extends Controller
         $user->save();
 
         $status = $request->status;
-        Alert::success('Success', 'Customer created successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Customer created successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect()->route('customer.all',  compact('status'));
     }// End Method
@@ -478,7 +478,7 @@ class AdminController extends Controller
         $user->save();
 
         $status = $request->status;
-        Alert::success('Success', 'Customer updated successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Customer updated successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect()->route('customer.all',  compact('status'));
     }// End Method
@@ -532,7 +532,7 @@ class AdminController extends Controller
 
         if ($existingSupplier) {
 
-            Alert::error('Error', 'Supplier with the same email already exists!')->showConfirmButton('OK', '#3085d6');
+            Alert::error('Error', 'Supplier with the same email already exists!')->showConfirmButton('OK', '#CE7F36');
 
             return redirect()->route('supplier.add');
         }
@@ -560,7 +560,7 @@ class AdminController extends Controller
 
         $user->save();
 
-        Alert::success('Success', 'Supplier created successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Supplier created successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect()->route('supplier.all');
     }// End Method
@@ -603,7 +603,7 @@ class AdminController extends Controller
 
         $user->save();
 
-        Alert::success('Success', 'Supplier updated successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Supplier updated successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect()->route('supplier.all');
     }// End Method
@@ -659,7 +659,7 @@ class AdminController extends Controller
         $existingSalaryId = AdvanceSalary::where('employee_id', $request->employee_id)->first();
 
         if ($existingSalaryMonth && $existingSalaryId && $existingSalaryYear) {
-            Alert::error('Error', 'Employee Advance Salary has already been Paid!')->showConfirmButton('OK', '#3085d6');
+            Alert::error('Error', 'Employee Advance Salary has already been Paid!')->showConfirmButton('OK', '#CE7F36');
             return redirect()->route('salary.advance.add');
         }
 
@@ -673,7 +673,7 @@ class AdminController extends Controller
 
         $salary->save();
 
-        Alert::success('Success', 'Advance Salary Paid successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Advance Salary Paid successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect()->route('salary.advance.all');
     }// End Method
@@ -701,7 +701,7 @@ class AdminController extends Controller
 
         $salary->save();
 
-        Alert::success('Success', 'Advance Salary updated successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Advance Salary updated successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect()->route('salary.advance.all');
     }// End Method
@@ -740,7 +740,7 @@ class AdminController extends Controller
 
         $paysalary->save();
 
-        Alert::success('Success', 'Employee Salary Paid successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Employee Salary Paid successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect()->route('salary.pay');
     }// End Method
@@ -787,7 +787,7 @@ class AdminController extends Controller
             $attendance->save();
         }
 
-        Alert::success('Success', 'Employee Attendance Submitted successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Employee Attendance Submitted successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect()->route('employee.attendance');
     }// End Method
@@ -875,7 +875,7 @@ class AdminController extends Controller
 
         $category->save();
 
-        Alert::success('Success', 'Category created successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Category created successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect()->route('category.index', ['type' => $request->type == 0 ? 'menu' : ($request->type == 1 ? 'product' : ($request->type == 2 ? 'blog' : 'store'))]);
     }// End Method
@@ -913,7 +913,7 @@ class AdminController extends Controller
 
         $category->save();
 
-        Alert::success('Success', 'Category Updated Successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Category Updated Successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect()->route('category.index', ['type' => $request->type == 0 ? 'menu' : ($request->type == 1 ? 'product' : ($request->type == 2 ? 'blog' : 'store'))]);
     }// End Method
@@ -950,7 +950,7 @@ class AdminController extends Controller
             'import_file' => 'required|mimes:xlsx',
         ]);
         Excel::import(new ProductImport, $request->file('import_file'));
-        Alert::success('Success', 'Category Imported Successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Category Imported Successfully!')->showConfirmButton('OK', '#CE7F36');
         return redirect()->route('category.index');
     }// End Method
     // End Category Method
@@ -1003,7 +1003,7 @@ class AdminController extends Controller
 
         $blog->save();
 
-        Alert::success('Success', 'Blog created successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Blog created successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect()->route('blog.index');
     }// End Method
@@ -1050,7 +1050,7 @@ class AdminController extends Controller
 
         $blog->save();
 
-        Alert::success('Success', 'Blog Updated Successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Blog Updated Successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect()->route('blog.index');
     }// End Method
@@ -1103,7 +1103,7 @@ class AdminController extends Controller
         // Check if product name already exists
         $existingMenu = Product::where('name', $request->name)->first();
         if ($existingMenu) {
-            Alert::error('Error', 'Product already Exists!')->showConfirmButton('OK', '#3085d6');
+            Alert::error('Error', 'Product already Exists!')->showConfirmButton('OK', '#CE7F36');
             return back();
         }
 
@@ -1130,7 +1130,7 @@ class AdminController extends Controller
 
         $menu->save();
 
-        Alert::success('Success', 'Menu created successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Menu created successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect()->route('menu.index');
     }// End Method
@@ -1176,7 +1176,7 @@ class AdminController extends Controller
 
         $menu->save();
 
-        Alert::success('Success', 'Menu Updated Successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Menu Updated Successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect()->route('menu.index');
     }// End Method
@@ -1213,7 +1213,7 @@ class AdminController extends Controller
             'import_file' => 'required|mimes:xlsx',
         ]);
         Excel::import(new MenuImport, $request->file('import_file'));
-        Alert::success('Success', 'Menu Imported Successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Menu Imported Successfully!')->showConfirmButton('OK', '#CE7F36');
         return redirect()->route('menu.index');
     }// End Method
     // End Menu Method
@@ -1253,7 +1253,7 @@ class AdminController extends Controller
         // Check if product name already exists
         $existingProduct = Product::where('name', $request->name)->first();
         if ($existingProduct) {
-            Alert::error('Error', 'Product already Exists!')->showConfirmButton('OK', '#3085d6');
+            Alert::error('Error', 'Product already Exists!')->showConfirmButton('OK', '#CE7F36');
             return back();
         }
 
@@ -1301,7 +1301,7 @@ class AdminController extends Controller
         $productInventory->present_stock = $request->stock;
         $productInventory->save();
 
-        Alert::success('Success', 'Product created successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Product created successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect()->route('product.index');
     }// End Method
@@ -1375,7 +1375,7 @@ class AdminController extends Controller
 
         $productInventory->save();
 
-        Alert::success('Success', 'Product Updated Successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Product Updated Successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect()->route('product.index');
     }// End Method
@@ -1412,7 +1412,7 @@ class AdminController extends Controller
             'import_file' => 'required|mimes:xlsx',
         ]);
         Excel::import(new ProductImport, $request->file('import_file'));
-        Alert::success('Success', 'Product Imported Successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Product Imported Successfully!')->showConfirmButton('OK', '#CE7F36');
         return redirect()->route('product.index');
     }// End Method
     // End Product Method
@@ -1449,7 +1449,7 @@ class AdminController extends Controller
         $order->payment_status = $paymentStatus;
         $order->save();
 
-        Alert::success('Success', 'Order Payment confirmed Successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Order Payment confirmed Successfully!')->showConfirmButton('OK', '#CE7F36');
         return back();
     }// End Method
     public function OrderConfirmation($status, $id)
@@ -1482,7 +1482,7 @@ class AdminController extends Controller
             $order->order_status = $orderStatus;
             $order->save();
 
-            Alert::success('Success', 'Order Completed!')->showConfirmButton('OK', '#3085d6');
+            Alert::success('Success', 'Order Completed!')->showConfirmButton('OK', '#CE7F36');
             return back();
         }
         else if ($status === 'cancel'){
@@ -1498,7 +1498,7 @@ class AdminController extends Controller
 
             $order->order_status = $orderStatus;
             $order->save();
-            Alert::success('Success', 'Order Cancelled!')->showConfirmButton('OK', '#3085d6');
+            Alert::success('Success', 'Order Cancelled!')->showConfirmButton('OK', '#CE7F36');
             return back();
         }
     }// End Method
@@ -1546,7 +1546,7 @@ class AdminController extends Controller
             $reserve->update();
 
             Mail::to($reserve->email)->send(new Reservation($data));
-            Alert::success('Success', 'Reservation confirmed!')->showConfirmButton('OK', '#3085d6');
+            Alert::success('Success', 'Reservation confirmed!')->showConfirmButton('OK', '#CE7F36');
             return back();
         }
 
@@ -1559,7 +1559,7 @@ class AdminController extends Controller
         $reserve->update();
         Mail::to($reserve->email)->send(new Reservation($data));
 
-        Alert::success('Success', 'Reservation cancelled!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Reservation cancelled!')->showConfirmButton('OK', '#CE7F36');
         return back();
     }// End Method
     public function DeleteReservation($id)
@@ -1590,7 +1590,7 @@ class AdminController extends Controller
         if ($request->item_type == 'product') {
             $product = Product::findOrFail($request->id);
             if ($product->stock < $request->qty) {
-                Alert::error('Error', 'Product Stock is Low!')->showConfirmButton('OK', '#3085d6');
+                Alert::error('Error', 'Product Stock is Low!')->showConfirmButton('OK', '#CE7F36');
                 return back();
             }
         }
@@ -1618,7 +1618,7 @@ class AdminController extends Controller
                 $product = Product::findOrFail($cartItem->id);
                 $qty = array_values($request->qty)[0];
                 if ($product->stock < $qty) {
-                    Alert::error('Error', 'Product Stock is Low!')->showConfirmButton('OK', '#3085d6');
+                    Alert::error('Error', 'Product Stock is Low!')->showConfirmButton('OK', '#CE7F36');
                     return back();
                 }
             }
@@ -1724,7 +1724,7 @@ class AdminController extends Controller
             }
         }
 
-        Alert::success('Success', 'Order Placed Successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Order Placed Successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect()->route('pos.invoice', $order->id);
     }// End Method
@@ -1844,7 +1844,7 @@ class AdminController extends Controller
             $product->save();
         }
 
-        Alert::success('Success', 'Product Inventory updated successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Product Inventory updated successfully!')->showConfirmButton('OK', '#CE7F36');
 
         // Redirect with success message
         return redirect()->route('inventory.product.expiredproduct');
@@ -1880,7 +1880,7 @@ class AdminController extends Controller
         $page_title = "Edit Product Inventory";
         $products = Product::where('status', '1')->get();
         $wizardstatus = 1;
-        Alert::success('Success', 'Product Stock updated successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Product Stock updated successfully!')->showConfirmButton('OK', '#CE7F36');
 
         // Redirect with success message
         return view('admin.inventory.product.edit', compact('products', 'wizardstatus', 'page_title'));
@@ -1911,7 +1911,7 @@ class AdminController extends Controller
         $page_title = "Edit Product Inventory";
         $products = Product::all();
         $wizardstatus = 2;
-        Alert::success('Success', 'Product Price updated successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Product Price updated successfully!')->showConfirmButton('OK', '#CE7F36');
 
         // Redirect with success message
         return view('admin.inventory.product.edit', compact('products', 'wizardstatus', 'page_title'));
@@ -1939,7 +1939,7 @@ class AdminController extends Controller
             $product->save();
         }
 
-        Alert::success('Success', 'Product Inventory updated successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Product Inventory updated successfully!')->showConfirmButton('OK', '#CE7F36');
 
         // Redirect with success message
         return redirect()->route('inventory.product.index');
@@ -1984,7 +1984,7 @@ class AdminController extends Controller
             $product->save();
         }
 
-        Alert::success('Success', 'Product inventory updated successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Product inventory updated successfully!')->showConfirmButton('OK', '#CE7F36');
 
         // Redirect with success message
         return redirect()->route('inventory.store.index');
@@ -2054,7 +2054,7 @@ class AdminController extends Controller
 
         $storeinventory->save();
 
-        Alert::success('Success', 'Item created successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Item created successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect()->route('inventory.store.index');
     }// End Method
@@ -2113,7 +2113,7 @@ class AdminController extends Controller
         }
 
         $storeItem->save();
-        Alert::success('Success', 'Item Updated Successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Item Updated Successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect()->route('inventory.store.index');
     }// End Method
@@ -2193,7 +2193,7 @@ class AdminController extends Controller
         $expense->date = $request->date;
         $expense->save();
 
-        Alert::success('Success', 'Expense created successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Expense created successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect()->back();
     }// End Method
@@ -2223,7 +2223,7 @@ class AdminController extends Controller
         $expense->date= trim($request->date);
         $expense->save();
 
-        Alert::success('Success', 'Expense Updated Successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Expense Updated Successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect()->back();
     }// End Method
@@ -2316,7 +2316,7 @@ class AdminController extends Controller
 
         $gallery->save();
 
-        Alert::success('Success', 'Gallery created successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Gallery created successfully!')->showConfirmButton('OK', '#CE7F36');
 
         // Redirect back to the appropriate gallery type
         return redirect()->route('gallery.index', ['type' => $request->type == 0 ? 'photo' : 'video']);
@@ -2385,7 +2385,7 @@ class AdminController extends Controller
 
         $gallery->update();
 
-        Alert::success('Success', 'Gallery Updated Successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Gallery Updated Successfully!')->showConfirmButton('OK', '#CE7F36');
 
         // Redirect back to the appropriate gallery type
         return redirect()->route('gallery.index', ['type' => $gallery->type == 0 ? 'photo' : 'video']);
@@ -2452,7 +2452,7 @@ class AdminController extends Controller
 
         $service->save();
 
-        Alert::success('Success', 'Service created successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Service created successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect()->route('service.index');
     }// End Method
@@ -2495,7 +2495,7 @@ class AdminController extends Controller
 
         $service->save();
 
-        Alert::success('Success', 'Service Updated Successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Service Updated Successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect()->route('service.index');
     }// End Method
@@ -2559,7 +2559,7 @@ class AdminController extends Controller
 
         $slider->save();
 
-        Alert::success('Success', 'Slider created successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Slider created successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect()->route('slider.index');
     }// End Method
@@ -2600,7 +2600,7 @@ class AdminController extends Controller
 
         $slider->save();
 
-        Alert::success('Success', 'Slider Updated Successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Slider Updated Successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect()->route('slider.index');
     }// End Method
@@ -2664,7 +2664,7 @@ class AdminController extends Controller
 
         $team->save();
 
-        Alert::success('Success', 'Team created successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Team created successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect()->route('team.index');
     }// End Method
@@ -2704,7 +2704,7 @@ class AdminController extends Controller
 
         $team->save();
 
-        Alert::success('Success', 'Team Updated Successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Team Updated Successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect()->route('team.index');
     }// End Method
@@ -2768,7 +2768,7 @@ class AdminController extends Controller
 
         $testimonial->save();
 
-        Alert::success('Success', 'Testimonial created successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Testimonial created successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect()->route('testimonial.index');
     }// End Method
@@ -2808,7 +2808,7 @@ class AdminController extends Controller
 
         $testimonial->save();
 
-        Alert::success('Success', 'Testimonial Updated Successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Testimonial Updated Successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect()->route('testimonial.index');
     }// End Method
@@ -2919,7 +2919,7 @@ class AdminController extends Controller
             $general->save();
 
             // Display a success SweetAlert alert
-            Alert::success('Success', 'General Details created successfully!')->showConfirmButton('OK', '#3085d6');
+            Alert::success('Success', 'General Details created successfully!')->showConfirmButton('OK', '#CE7F36');
 
         }
         else {
@@ -2985,7 +2985,7 @@ class AdminController extends Controller
             $general->save(); // Save the updated model
 
             // Display a success SweetAlert alert
-            Alert::success('Success', 'General Details Updated Successfully!')->showConfirmButton('OK', '#3085d6');
+            Alert::success('Success', 'General Details Updated Successfully!')->showConfirmButton('OK', '#CE7F36');
         }
 
         return back();
@@ -3001,7 +3001,7 @@ class AdminController extends Controller
     public function AddDatabase()
     {
         \Artisan::call('backup:run');
-        Alert::success('Success', 'Database Backup Successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Database Backup Successfully!')->showConfirmButton('OK', '#CE7F36');
         return redirect()->back();
     }// End Method
     public function DownloadDatabase($getFilename)
@@ -3041,7 +3041,7 @@ class AdminController extends Controller
 
         ]);
 
-        Alert::success('Success', 'Permission created successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Permission created successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect()->route('permission.all');
     }// End Method
@@ -3065,7 +3065,7 @@ class AdminController extends Controller
 
         ]);
 
-        Alert::success('Success', 'Permission updated successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Permission updated successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect()->route('permission.all');
     }// End Method
@@ -3093,7 +3093,7 @@ class AdminController extends Controller
             'import_file' => 'required|mimes:xlsx',
         ]);
         Excel::import(new ProductImport, $request->file('import_file'));
-        Alert::success('Success', 'Permission Imported Successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Permission Imported Successfully!')->showConfirmButton('OK', '#CE7F36');
         return redirect()->route('permission.index');
     }// End Method
     // End Permission Method
@@ -3119,7 +3119,7 @@ class AdminController extends Controller
             'name' => $request->name,
         ]);
 
-        Alert::success('Success', 'Role created successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Role created successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect()->route('role.all');
     }// End Method
@@ -3140,7 +3140,7 @@ class AdminController extends Controller
             'name' => $request->name,
         ]);
 
-        Alert::success('Success', 'Role updated successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Role updated successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect()->route('role.all');
     }// End Method
@@ -3188,7 +3188,7 @@ class AdminController extends Controller
 
         }
 
-        Alert::success('Success', 'Role Permission created successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Role Permission created successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect()->route('role.permission.all');
     }// End Method
@@ -3211,7 +3211,7 @@ class AdminController extends Controller
         // Sync only the valid permissions
         $role->syncPermissions($validPermissions);
 
-        Alert::success('Success', 'Role Permission updated successfully!')->showConfirmButton('OK', '#3085d6');
+        Alert::success('Success', 'Role Permission updated successfully!')->showConfirmButton('OK', '#CE7F36');
 
         return redirect()->route('role.permission.all');
     }// End Method
@@ -3260,7 +3260,7 @@ class AdminController extends Controller
         {
             // Assign the role to the employee
             $employee->assignRole($role);
-            Alert::success('Success', 'Role assigned successfully!')->showConfirmButton('OK', '#3085d6');
+            Alert::success('Success', 'Role assigned successfully!')->showConfirmButton('OK', '#CE7F36');
             return redirect()->route('employee.role.all');
         }
         else
@@ -3295,7 +3295,7 @@ class AdminController extends Controller
         {
             // Assign the role to the employee
             $employee->assignRole($role);
-            Alert::success('Success', 'Role assigned successfully!')->showConfirmButton('OK', '#3085d6');
+            Alert::success('Success', 'Role assigned successfully!')->showConfirmButton('OK', '#CE7F36');
             return redirect()->route('employee.role.all');
         }
         else
@@ -3355,7 +3355,7 @@ class AdminController extends Controller
         {
             // Assign the role to the employee
             $employee->assignRole($role);
-            Alert::success('Success', 'Employee Role assigned successfully!')->showConfirmButton('OK', '#3085d6');
+            Alert::success('Success', 'Employee Role assigned successfully!')->showConfirmButton('OK', '#CE7F36');
             return redirect()->route('employee.role.all');
         }
         else
@@ -3390,7 +3390,7 @@ class AdminController extends Controller
         {
             // Assign the role to the employee
             $employee->assignRole($role);
-            Alert::success('Success', 'Employee Role assigned successfully!')->showConfirmButton('OK', '#3085d6');
+            Alert::success('Success', 'Employee Role assigned successfully!')->showConfirmButton('OK', '#CE7F36');
             return redirect()->route('employee.role.all');
         }
         else

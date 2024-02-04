@@ -12,12 +12,12 @@ $general = \App\Models\General::latest('created_at')->first();
     <style media="all" type="text/css">
         @media all {
         .btn-primary table td:hover {
-            background-color: #12263f !important;
+            background-color: #9E6126!important;
         }
 
         .btn-primary a:hover {
-            background-color: #12263f !important;
-            border-color: #12263f !important;
+            background-color: #9E6126!important;
+            border-color: #9E6126!important;
         }
         }
         @media only screen and (max-width: 640px) {
@@ -119,7 +119,7 @@ $general = \App\Models\General::latest('created_at')->first();
                           <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: auto;">
                             <tbody>
                               <tr>
-                                <td style="font-family: Helvetica, sans-serif; font-size: 16px; vertical-align: top; border-radius: 4px; text-align: center; background-color: #3085d6;" valign="top" align="center" bgcolor="#3085d6"> <a href="{{ route('login') }}" target="_blank" style="border: solid 2px #3085d6; border-radius: 4px; box-sizing: border-box; cursor: pointer; display: inline-block; font-size: 16px; font-weight: bold; margin: 0; padding: 10px 18px; text-decoration: none; text-transform: capitalize; background-color: #3085d6; border-color: #3085d6; color: #ffffff;">Sign In</a> </td>
+                                <td style="font-family: Helvetica, sans-serif; font-size: 16px; vertical-align: top; border-radius: 4px; text-align: center; background-color: #CE7F36;" valign="top" align="center" bgcolor="#CE7F36"> <a href="{{ route('login') }}" target="_blank" style="border: solid 2px #CE7F36; border-radius: 4px; box-sizing: border-box; cursor: pointer; display: inline-block; font-size: 16px; font-weight: bold; margin: 0; padding: 10px 18px; text-decoration: none; text-transform: capitalize; background-color: #CE7F36; border-color: #CE7F36; color: #ffffff;">Sign In</a> </td>
                               </tr>
                             </tbody>
                           </table>

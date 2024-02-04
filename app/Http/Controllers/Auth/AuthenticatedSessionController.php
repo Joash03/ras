@@ -40,7 +40,7 @@ class AuthenticatedSessionController extends Controller
             $request->session()->regenerateToken();
 
             // Show SweetAlert for inactive users
-            Alert::error('Error', 'Your account has been deactivated!')->showConfirmButton('OK', '#3085d6');
+            Alert::error('Error', 'Your account has been deactivated!')->showConfirmButton('OK', '#CE7F36');
 
             return redirect()->route('home');
         }
@@ -62,7 +62,7 @@ class AuthenticatedSessionController extends Controller
             toast('Sign in Successful', 'success');
         } elseif ($user->role === 'customer') {
             $url = '/';
-            Alert::success('Success', 'Sign in Successful!')->showConfirmButton('OK', '#3085d6');
+            Alert::success('Success', 'Sign in Successful!')->showConfirmButton('OK', '#CE7F36');
         }
 
         return redirect()->intended($url);

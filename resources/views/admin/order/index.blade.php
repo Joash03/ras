@@ -357,8 +357,8 @@
                 text: 'Are you sure you want to confirm this payment? This action cannot be Reversed',
                 icon: 'question',
                 showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
+                confirmButtonColor: '#CE7F36',
+                cancelButtonColor: '#ED1C24',
                 confirmButtonText: 'Yes, confirm payment!'
             }).then((result) => {
                 if (result.isConfirmed) {
@@ -389,8 +389,8 @@
                 text: 'Are you sure you want to delete this item?',
                 icon: 'warning',
                 showCancelButton: true,
-                confirmButtonColor: '#d33',
-                cancelButtonColor: '#3085d6',
+                confirmButtonColor: '#ED1C24',
+                cancelButtonColor: '#CE7F36',
                 confirmButtonText: 'Yes, delete it!'
             }).then((result) => {
                 if (result.isConfirmed) {

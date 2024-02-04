@@ -278,14 +278,14 @@ $page_id = 0;
                                             <textarea class="form-control" name="description"
                                                 placeholder="Please provide any additional info"></textarea>
                                         </div>
-                                        {{-- <div class="form-group terms">
+                                        <div class="form-group terms">
                                             <label class="container_check">Please accept our <a href="#"
                                                     data-bs-toggle="modal" data-bs-target="#terms-txt">Terms and
                                                     conditions</a>
                                                 <input type="checkbox" name="terms" value="Yes" class="required">
                                                 <span class="checkmark"></span>
                                             </label>
-                                        </div> --}}
+                                        </div>
                                     </div>
                                 </div>
                                 <div id="bottom-wizard">

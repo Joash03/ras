@@ -33,52 +33,65 @@ $general = \App\Models\General::latest('created_at')->first();
                                 Subtotal
                             </th>
                             <th>
+                                Action
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                        @if (!empty($carts))
-                        @php
-                            $totalsubTotal = 0;
-                        @endphp
+                        @if ($carts->isEmpty())
+                            @php
+                                $totalsubTotal = 0;
+                            @endphp
+                            <tr>
+                                <td  class="item-name h5 text-center">Gallery List is Empty!</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        @else
+                            @if (!empty($carts))
+                                @php
+                                    $totalsubTotal = 0;
+                                @endphp
 
-                        @foreach ($carts as $cart)
-                        @php
-                            $menuThumbnail = $cart->item_type === 'menu' && $cart->menu ? $cart->menu->thumbnail : null;
-                            $productThumbnail = $cart->item_type === 'product' && $cart->product ? $cart->product->thumbnail : null;
+                                @foreach ($carts as $cart)
+                                @php
+                                    $menuThumbnail = $cart->item_type === 'menu' && $cart->menu ? $cart->menu->thumbnail : null;
+                                    $productThumbnail = $cart->item_type === 'product' && $cart->product ? $cart->product->thumbnail : null;
 
-                            $subTotal = $cart->item_type === 'menu' && $cart->menu && $cart->menu->price ? $cart->quantity * $cart->menu->price : ($cart->item_type === 'product' && $cart->product && $cart->product->sales_price ? $cart->quantity * $cart->product->sales_price : 0);
+                                    $subTotal = $cart->item_type === 'menu' && $cart->menu && $cart->menu->price ? $cart->quantity * $cart->menu->price : ($cart->item_type === 'product' && $cart->product && $cart->product->sales_price ? $cart->quantity * $cart->product->sales_price : 0);
 
-                            $totalsubTotal += $subTotal;
-                        @endphp
-
-                                <tr>
-                                    <td>
-                                        <div class="thumb_cart">
-                                            <img width="80" src="{{ $menuThumbnail ? url('uploads/menu_images/'.$menuThumbnail) : url('uploads/product_images/'.$productThumbnail) }}" data-src="{{ $menuThumbnail ? url('uploads/menu_images/'.$menuThumbnail) : url('uploads/product_images/'.$productThumbnail) }}" class="lazy" alt="Image">
-                                        </div>
-                                        <span class="item_cart">{{ $cart->item_type === 'menu' && $cart->menu ? $cart->menu->name : ($cart->item_type === 'product' && $cart->product ? $cart->product->name : '') }} X {{ $cart->quantity }}</span>
-                                    </td>
-                                    <td>
-                                        <strong>#<span>{{ $cart->item_type === 'menu' && $cart->menu ? $cart->menu->price : ($cart->item_type === 'product' && $cart->product ? $cart->product->sales_price : '') }}</span></strong>
-                                    </td>
-                                    <td>
-                                        <div class="numbers-row">
-                                            <input type="number" value="{{ $cart->quantity }}" id="quantity_{{ $cart->id }}" class="qty2" name="quantity_{{ $cart->id }}">
-                                            <div class="inc button_inc">+</div>
-                                            <div class="dec button_inc">-</div>
-                                            <div class="inc button_inc">+</div>
-                                            <div class="dec button_inc">-</div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <strong>#<span>{{ $subTotal }}</span></strong>
-                                    </td>
-                                    <td class="options">
-                                        <a href="{{ route('cart.delete', [$cart->id, auth()->user() ? auth()->user()->id : null]) }}" class="btn btn-link text-danger delete-button" data-item-id="{{ $cart->id }}"><i class="fas fa-trash"></i></a>
-                                    </td>
-                                </tr>
-                        @endforeach
+                                    $totalsubTotal += $subTotal;
+                                @endphp
+                                    <tr>
+                                        <td>
+                                            <div class="thumb_cart">
+                                                <img width="80" src="{{ $menuThumbnail ? url('uploads/menu_images/'.$menuThumbnail) : url('uploads/product_images/'.$productThumbnail) }}" data-src="{{ $menuThumbnail ? url('uploads/menu_images/'.$menuThumbnail) : url('uploads/product_images/'.$productThumbnail) }}" class="lazy" alt="Image">
+                                            </div>
+                                            <span class="item_cart">{{ $cart->item_type === 'menu' && $cart->menu ? $cart->menu->name : ($cart->item_type === 'product' && $cart->product ? $cart->product->name : '') }} X {{ $cart->quantity }}</span>
+                                        </td>
+                                        <td>
+                                            <strong>#<span>{{ $cart->item_type === 'menu' && $cart->menu ? $cart->menu->price : ($cart->item_type === 'product' && $cart->product ? $cart->product->sales_price : '') }}</span></strong>
+                                        </td>
+                                        <td>
+                                            <div class="numbers-row">
+                                                <input type="number" value="{{ $cart->quantity }}" id="quantity_{{ $cart->id }}" class="qty2" name="quantity_{{ $cart->id }}">
+                                                <div class="inc button_inc">+</div>
+                                                <div class="dec button_inc">-</div>
+                                                <div class="inc button_inc">+</div>
+                                                <div class="dec button_inc">-</div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <strong>#<span>{{ $subTotal }}</span></strong>
+                                        </td>
+                                        <td class="options">
+                                            <a href="{{ route('cart.delete', [$cart->id, auth()->user() ? auth()->user()->id : null]) }}" class="btn btn-link text-danger delete-button" data-item-id="{{ $cart->id }}"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            @endif
                         @endif
                     </tbody>
                 </table>
@@ -132,8 +145,8 @@ $general = \App\Models\General::latest('created_at')->first();
                     text: 'Are you sure you want to delete this item?',
                     icon: 'warning',
                     showCancelButton: true,
-                    confirmButtonColor: '#d33',
-                    cancelButtonColor: '#3085d6',
+                    confirmButtonColor: '#ED1C24',
+                    cancelButtonColor: '#CE7F36',
                     confirmButtonText: 'Yes, delete it!'
                 }).then((result) => {
                     if (result.isConfirmed) {
@@ -143,7 +156,8 @@ $general = \App\Models\General::latest('created_at')->first();
                             title: 'Success',
                             text: 'Item has been deleted successfully!',
                             icon: 'success',
-                            showConfirmButton: true
+                            showConfirmButton: true,
+                            confirmButtonColor: '#CE7F36'
                         });
                     } else {
                         // If cancel button is clicked, show a cancel message
@@ -151,7 +165,8 @@ $general = \App\Models\General::latest('created_at')->first();
                             title: 'Cancelled',
                             text: 'Delete action has been cancelled!',
                             icon: 'info',
-                            showConfirmButton: true
+                            showConfirmButton: true,
+                            confirmButtonColor: '#CE7F36'
                         });
                     }
                 });
