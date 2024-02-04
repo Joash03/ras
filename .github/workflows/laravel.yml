@@ -32,4 +32,8 @@ jobs:
       env:
         DB_CONNECTION: mysql
         DB_DATABASE: database/database.mysql
+        MYSQL_DATABASE: test_db
+        DB_USERNAME: user
+        DB_PASSWORD: secret
+        DB_PORT: ${{ job.services.mysql.ports[3306] }}
       run: vendor/bin/phpunit
